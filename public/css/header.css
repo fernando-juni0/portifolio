@@ -1,0 +1,67 @@
+
+header{
+    width: 13em;
+    background-color: var(--secundary-black);
+    height: 100%;
+    position: fixed;
+    font-family: 'Inter', sans-serif;
+}
+#logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-black);
+    
+}
+#logo img{
+    width: 10em;
+}
+#logo #name{
+    color: var(--white);
+    margin-bottom: 0.5em;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+#logo #legend{
+    color: var(--text-gray-color-primary);
+    font-size: 0.8em;
+    font-weight: 100;
+    margin-bottom: 3em;
+}
+
+#navegation{
+    width: 100%;
+    height: 100%;
+}
+#navegation nav ul{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    flex-direction: column;
+    margin-top: 3em;
+}
+#navegation nav ul li{
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+}
+#navegation nav ul li a{
+    font-size: 1.2em;
+    text-decoration: none;
+    color: var(--text-gray-color-primary);
+    text-align: center;
+    transition: 0.5s;
+}
+#navegation nav ul li a:hover{
+    color: var(--text-color-purple);
+    transition: 0.5s;
+}
+#icons{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
