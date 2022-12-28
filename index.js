@@ -33,19 +33,32 @@ app.set('view engine', 'ejs');
 
 
 
+
+
+//----------------POST--------------------
+
+
 //-----------------GET--------------------
 
 app.get('/',(req,res)=>{
     res.render('index')
 })
 
+app.get('/about',(req, res)=>{
+    res.render('about')
+})
 
-//----------------POST--------------------
+app.get('/skills',(req, res)=>{
+    res.render('skills')
+})
 
+app.get('/work',(req, res)=>{
+    res.render('work')
+})
 
-
-
-
+app.get('/contact',(req, res)=>{
+    res.render('contact')
+})
 
 
 

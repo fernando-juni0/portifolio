@@ -44,7 +44,7 @@ main{
     font-family: 'Covered By Your Grace', cursive;
 }
 #main-title{
-    color: var(--white);
+    color: var(--text-color-purple);
     margin-left: 6vw;
     font-family: 'Imprima', sans-serif;
     font-size: 3.5vw;
@@ -95,6 +95,15 @@ main{
     flex-direction: column;
     justify-content: center;
 }
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1400px) {
     #body-content, #h1-content{
         margin: 3vh 0 3vh 0;
