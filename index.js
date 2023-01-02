@@ -6,6 +6,7 @@ const session = require('express-session')
 const path = require('path');
 
 
+
 //------------Configs--------------
 const app = express();
 
@@ -32,10 +33,19 @@ app.set('view engine', 'ejs');
 
 
 
-
-
-
 //----------------POST--------------------
+
+
+
+app.post('/contact/menssage', (req,res)=>{
+    let data = {
+        nome: req.body.nome,
+        email: req.body.email,
+        mensagem: req.body.message
+    }
+    console.log(data);
+    res.redirect('/contact')
+})  
 
 
 //-----------------GET--------------------
