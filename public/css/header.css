@@ -38,7 +38,7 @@ header{
     text-align: center;
     list-style: none;
     flex-direction: column;
-    margin-top: 3em;
+    margin-top: 6vh;
 }
 #navegation nav ul li{
     width: 100%;
@@ -83,7 +83,7 @@ footer{
     
 }
 #lang_selected{
-    width: 3em;
+    width: 4vw;
     margin-right: 1vw;
     margin-bottom: 0.8vh;
     cursor: pointer;
@@ -106,7 +106,6 @@ footer{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    
 }
 .lang-icons:first-child{
     width: 3em;
@@ -116,4 +115,102 @@ footer{
     cursor: pointer;
     width: 3em;
     margin-left: 0.5em; 
+}
+
+
+.hamburger {
+    display: none;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    transition: opacity .3s;
+    position: fixed;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.hamburger .line{
+    width: 40px;
+    height: 5px;
+    background: rgb(236, 66, 66);
+    margin: 8px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.hamburger .line:nth-child(1) {
+    background-color: #a77a33;
+}
+
+.hamburger .line:nth-child(2) {
+    background-color: #633200;
+}
+
+.hamburger .line:nth-child(3) {
+    background-color: #a77a33;
+}
+.hamburger.isactive{
+    z-index: 120;
+}
+.hamburger.isactive .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.isactive .line:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+}
+
+.hamburger.isactive .line:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+#header{
+    transition: 0.5s;
+}
+#header.active {
+    left: 0;
+    z-index: 100;
+    min-width: 65vw;
+    transition: 0.5s;
+}
+
+
+@media screen and (max-width: 300px) {
+    header{
+        width: 70vw;
+        position: fixed;
+        left: -200%;
+
+    }
+    
+}
+@media screen and (max-width: 900px) {
+    header{
+        width: 25vw;
+    }
+    
+}
+@media screen and (max-width: 740px) {
+    header{
+        width: 22vw;
+        position: fixed;
+        left: -200%;
+
+    }
+    #main-containner{
+        margin-top: 8vh;
+    }
+    .hamburger{
+        display: block;
+    }
+    #lang_selected{
+        width: 4em;
+    }
+    #lang-containner{
+        width: 30vw;
+        left: 45vw;
+        margin-bottom: 1em;
+    }
 }

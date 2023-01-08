@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="containner">
+        <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:2})  %> 
         <main>
             <div id="content">
@@ -19,17 +20,14 @@
                     <div id="h1-content">
                         <span class="code" style="margin-left: 4em;">&lt;H2&gt;</span><br>
                         <h1 id="main-title">
-                            A little about myself
+
                         </h1><br>
                         <span class="code" style="margin-left: 4em;">&lt;/H2&gt;</span><br><br>
                     </div>
                     <p style="margin-left: 4em;">
                         <span class="code">&lt;p&gt;</span><br>
                             <div id="text-paragrafo">
-                                I started programming thanks to a course I took here in my city approximately 5 years ago, since then I've been studying and making an effort to conquer my space, I've already taught classes, worked for a company, done volunteer work and others to acquire knowledge. <br><br>
-                                I'm a complete front-end and back-end developer, I create entire systems by myself and I'm improving my techniques every time. <br><br>
-                                I'm currently programming with JavaScript using Nodejs on the Back-end. I also develop with HTML, CSS and pure JavaScript. <br><br>
-                                I also have other knowledge such as Hosting, Firebase, relational and non-relational databases, APIS.
+                                
                             </div><br>
                         <span class="code" style="margin-top: -0.8em; margin-left: 4em;" >&lt;/p&gt;</span>
                     </p><br><br>
@@ -62,11 +60,11 @@
                 </div>
                 <div id="works">
                     <div id="works-col">
-                        <span id="work-title">Full-Stack Developer</span>
+                        <span id="work-title"></span>
                         <span id="work-company">InfoEduc Company</span>
                         <span id="work-date">01/2022-04/2022</span>
                         <p id="work-resume">
-                            Contributes to the development of a system on the platform that served education networks in Brazil
+                            
                         </p>
                     </div>
                 </div>

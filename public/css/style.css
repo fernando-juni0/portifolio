@@ -35,7 +35,6 @@ main{
 #content{
     padding: 15px;
     display: flex;
-    height: 90vh;
     width: 100%;
     flex-direction: column;
 }
@@ -66,6 +65,7 @@ main{
     align-items: center;
     text-align: center;
     margin-left: 2em;
+    margin-top: 2vh;
     position: relative;
     bottom: 2vh;
 }
@@ -88,7 +88,7 @@ main{
     transition: 0.5s;
 }
 #body-content{
-    margin: 1vh 0 1vh 0;
+    margin: 2vh 0 2vh 0;
 }
 #body-content, #h1-content{
     display: flex;
@@ -97,9 +97,25 @@ main{
 }
 @media screen and (min-width: 1400px) {
     #body-content, #h1-content{
-        margin: 3vh 0 3vh 0;
+        margin: 4vh 0 4vh 0;
     }
     #button{
         bottom: 4vh;
+    }
+    
+}
+@media screen and (max-width: 740px) {
+    #contact-button{
+        font-size: 0.7em;
+    }
+
+}
+@media screen and (max-width: 1200px) {
+    #text-paragrafo{
+        font-size: 0.8em;
+    }
+    #main-title{
+        font-size: 2em;
+        margin-left: 3em;
     }
 }

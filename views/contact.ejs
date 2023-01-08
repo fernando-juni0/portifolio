@@ -10,7 +10,8 @@
 </head>
 <body>
     <div id="containner">
-        <%- include('./reusable/header.ejs',{index:4})  %> 
+        <%- include('./reusable/reload.ejs') %> 
+        <%- include('./reusable/header.ejs',{index:4}) %> 
         <main>
             <div id="content">
                 <span class="code">&lt;HTML&gt;</span>
@@ -19,13 +20,13 @@
                     <div id="h1-content">
                         <span class="code" style="margin-left: 4em;">&lt;H2&gt;</span>
                         <h1 id="main-title">
-                            Contact Me
+                            
                         </h1>
                         <span class="code" style="margin-left: 4em;">&lt;/H2&gt;</span><br>
                     <p style="margin-left: 4em;">
                         <span class="code">&lt;p&gt;</span><br>
                             <div id="text-paragrafo">
-                                I'm interested in freelance opportunities, especially ambitious or large projects. however, if you have any other request or question, you can use the form below to communicate with me or through the other means of contact in the menu bar.
+                                
                             </div><br>
                         <span class="code" style="margin-top: -0.8em; margin-left: 4em;" >&lt;/p&gt;</span>
                     </p><br>
@@ -34,13 +35,14 @@
                             <form action="/contact/menssage" method="post">
                                 <div id="form-conteinner">
                                     <div id="form_inputs">
+                                        <input type="text" hidden id="idioma" name="lang" value="">
                                         <input id="nome" name="nome" type="text" placeholder="Name">
                                         <input id="email" name="email" type="text" placeholder="Email">
                                     </div>
                                     <div id="form-textarea">
                                         <textarea name="message" id="message" placeholder="Message"></textarea>
                                     </div>
-                                    <button id="enviar" type="submit">Enviar</button>
+                                    <button id="enviar" type="submit"></button>
                                 </div>
                             </form>
                         <span class="code" style="margin-left: 4em;">&lt;/FORM&gt;</span><br>
@@ -51,6 +53,9 @@
             </div>
         </main>
     </div>
+    <script>
+        document.getElementById('idioma').value = localStorage.getItem('lang')
+    </script>
     <script src="../public/js/lang.js"></script>
 </body>
 </html>

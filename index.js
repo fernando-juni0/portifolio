@@ -4,7 +4,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const session = require('express-session')
 const path = require('path');
-
+const nodemailer = require('nodemailer')
 
 
 //------------Configs--------------
@@ -18,6 +18,22 @@ app.use(session({
     resave: false, 
     saveUninitialized: true,
 }))
+
+
+const SMTP_CONFIG = require('./config/smtp')
+const trasporter = nodemailer.createTransport({
+    host: SMTP_CONFIG.host,
+    port: SMTP_CONFIG.port,
+    service:'gmail',
+    secure: true,
+    auth:{
+        user: SMTP_CONFIG.user,
+        pass: SMTP_CONFIG.pass
+    },
+    tls:{
+        rejectUnauthorized: false
+    }
+})
 
 
 
@@ -41,9 +57,34 @@ app.post('/contact/menssage', (req,res)=>{
     let data = {
         nome: req.body.nome,
         email: req.body.email,
-        mensagem: req.body.message
+        mensagem: req.body.message,
+        lang: req.body.lang
     }
-    console.log(data);
+    if (data.lang == 'pt-BR') {
+        trasporter.sendMail({
+            text: 'Olá sua mensagem já foi recebida logo entrarei em contato.',
+            html:'<b>Olá sua mensagem já foi recebida logo entrarei em contato.</b>',
+            subject: "Nova Mensagem de Fernando Júnio",
+            from: "Fernando Júnio <fernando132sj@gmail.com>",
+            to: [data.email,'fernando132sj@gmail.com']
+        })
+    }else if(data.lang == 'en-US'){
+        trasporter.sendMail({
+            text: 'Hello, your message has been received, I will contact you soon.',
+            html:'<b>Hello, your message has been received, I will contact you soon.</b>',
+            subject: "New Message from Fernando Júnio",
+            from: "Fernando Júnio <fernando132sj@gmail.com>",
+            to: [data.email,'fernando132sj@gmail.com']
+        })
+    }
+
+    trasporter.sendMail({
+        text: data.nome +" | "+ data.email +" | "+ data.mensagem,
+        html: '<b>Nome: </b>' + data.nome +" <br><br> "+ '<b>Email: </b>' +data.email +" <br><br> "+ '<b>Mensagem: </b>' +data.mensagem,
+        subject: "Nova Mensagem do Portifolio enviada por"+ data.nome,
+        from: "Fernando Júnio <fernando132sj@gmail.com>",
+        to: ['junio132sj@gmail.com','fernando132sj@gmail.com']
+    })
     res.redirect('/contact')
 })  
 
