@@ -153,3 +153,5 @@ document.querySelectorAll('.lang-icons').forEach((item)=>{
         }, 2000);
     })
 })
+
+console.log(
