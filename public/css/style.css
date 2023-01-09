@@ -56,15 +56,17 @@ main{
     position: absolute;
     margin-top: -1.2rem;
     margin-left: -1em;
+    font-weight: 200;
 }
 #main-title::after{
-    content: '<h1>';
+    content: '</h1>';
     font-family: 'Covered By Your Grace', cursive;
     color: var(--text-gray-color-secundary);
     font-size: 1.3rem;
     position: absolute;
     margin-top: 1.5em;
     margin-left: 0.5em;
+    font-weight: 200;
 }
 #text-paragrafo{
     font-size: 1.2vw;

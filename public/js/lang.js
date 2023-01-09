@@ -59,6 +59,11 @@ var textLangs = {
 langVerification()
 function langVerification(){
     const idioma = localStorage.getItem('lang')
+    console.log(idioma);
+    if (idioma == null || idioma == undefined) {
+        let navLang = window.navigator.language
+        localStorage.setItem('lang', navLang);
+    }
     if (idioma == 'en-US') {
         langSelected.src = '../public/assets/US.svg'
         if (index == 0) {
