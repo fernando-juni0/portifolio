@@ -46,7 +46,25 @@ main{
     color: var(--white);
     margin-left: 6vw;
     font-family: 'Imprima', sans-serif;
-    font-size: 3.5vw;
+    font-size: 3em;
+}
+#main-title::before{
+    content: '<h1>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1.3rem;
+    position: absolute;
+    margin-top: -1.2rem;
+    margin-left: -1em;
+}
+#main-title::after{
+    content: '<h1>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1.3rem;
+    position: absolute;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
 }
 #text-paragrafo{
     font-size: 1.2vw;
@@ -95,7 +113,7 @@ main{
     flex-direction: column;
     justify-content: center;
 }
-@media screen and (min-width: 1400px) {
+/* @media screen and (min-width: 1400px) {
     #body-content, #h1-content{
         margin: 4vh 0 4vh 0;
     }
@@ -118,4 +136,4 @@ main{
         font-size: 2em;
         margin-left: 3em;
     }
-}
+} */
