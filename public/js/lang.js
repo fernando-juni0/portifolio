@@ -62,6 +62,7 @@ function langVerification(){
     console.log(idioma);
     if (idioma == null || idioma == undefined) {
         let navLang = window.navigator.language
+        console.log(navLang);
         localStorage.setItem('lang', navLang);
     }
     if (idioma == 'en-US') {
