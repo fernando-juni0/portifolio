@@ -11,13 +11,14 @@
 <body>
     <div id="containner">
         <%- include('./reusable/reload.ejs') %> 
+        <%- include('./reusable/langContainner.ejs') %> 
         <%- include('./reusable/header.ejs',{index:0})  %> 
         <main>
             <div id="main-containner">
                 <div id="content">
-                    <span class="code">&lt;HTML&gt;</span><br>
+                    <span id="htmlTag">&lt;HTML&gt;</span><br>
                     <div id="body-content">
-                        <span class="code" style="margin-left: 2em;">&lt;BODY&gt;</span><br>
+                        <!-- <span class="code" style="margin-left: 2em;">&lt;BODY&gt;</span><br> -->
                         <div id="h1-content">
                             <!-- <span class="code" style="margin-left: 4em;">&lt;H1&gt;</span><br> -->
                             <h1 id="main-title">
@@ -25,13 +26,14 @@
                             </h1><br>
                             <!-- <span class="code" style="margin-left: 4em;">&lt;/H1&gt;</span><br> -->
                         </div>
-                        <p><span class="code" style="margin-left: 4em; margin-right: 0.5em;">&lt;p&gt;</span><span id="text-paragrafo"></span><span class="code" style="margin-left: 0.5em;">&lt;/p&gt;</span></p><br><br>
-                        <span class="code" style="margin-left: 2em;">&lt;/BODY&gt;</span><br>
+                        <p id="paragrafo-content">
+                            <span id="text-paragrafo"></span>
+                        </p>
                     </div>
-                    <span class="code">&lt;/HTML&gt;</span><br>
+                    <span id="htmlTag-bottom">&lt;/HTML&gt;</span><br>
                 </div>
                <div id="button">
-                    <a href="#">
+                    <a href="/contact">
                         <span id="contact-button"></span>
                     </a>
                 </div>
@@ -39,5 +41,6 @@
             
         </main>
     </div>
+    <script src="../public/js/lang.js"></script>
 </body>
 </html>

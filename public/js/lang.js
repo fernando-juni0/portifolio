@@ -133,7 +133,7 @@ function langVerification(){
 
 document.getElementById('lang_selected').addEventListener('click',()=>{
     if (open_lang_popup == false) {
-        document.getElementById('lang-containner').style.display = 'block'
+        document.getElementById('lang-containner').style.display = 'flex'
         open_lang_popup = true
     }else{
         document.getElementById('lang-containner').style.display = 'none'

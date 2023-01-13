@@ -1,6 +1,6 @@
 
 header{
-    width: 16vw;
+    width: 18em;
     background-color: var(--secundary-black);
     height: 100%;
     display: flex;
@@ -83,40 +83,11 @@ footer{
     
 }
 #lang_selected{
-    width: 4vw;
+    width: 4em;
     margin-right: 1vw;
     margin-bottom: 0.8vh;
     cursor: pointer;
 }
-#lang-containner{
-    position: fixed;
-    z-index: 100;
-    left: 5.3vw;
-    bottom: 3.5em;
-    width: 12vw;
-    background-color: aliceblue;
-    height: 16vh;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 2px solid var(--border-color);
-    transition: 0.5s;
-}
-#lang-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.lang-icons:first-child{
-    width: 3em;
-    margin: 0;
-}
-.lang-icons{
-    cursor: pointer;
-    width: 3em;
-    margin-left: 0.5em; 
-}
-
 
 .hamburger {
     display: none;
@@ -179,25 +150,27 @@ footer{
 
 @media screen and (max-width: 300px) {
     header{
-        width: 70vw;
+        
         position: fixed;
         left: -200%;
 
     }
     
 }
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 740px) {
     header{
-        width: 25vw;
+        
+        height: 100%;
+        display: flex;
     }
-    
 }
+
+
 @media screen and (max-width: 740px) {
     header{
-        width: 22vw;
+        
         position: fixed;
         left: -200%;
-
     }
     #main-containner{
         margin-top: 8vh;
@@ -207,10 +180,5 @@ footer{
     }
     #lang_selected{
         width: 4em;
-    }
-    #lang-containner{
-        width: 30vw;
-        left: 45vw;
-        margin-bottom: 1em;
     }
 }

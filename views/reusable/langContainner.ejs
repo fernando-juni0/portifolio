@@ -1,0 +1,46 @@
+<style>
+    
+    #lang-containner{
+        display: flex;
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    #lang-content{
+        height: 26vh;
+        width: 22vw;
+        transition: 0.5s;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid var(--border-color);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .lang-icons{
+        margin-top: 5px;
+        cursor: pointer;
+        width: 4em;
+        margin-left: 0.5em; 
+    }
+
+</style>
+
+<div id="lang-containner" style="display: none;">
+    <div id="lang-content">
+        <img data-lang="pt-BR" class="lang-icons" src="../public/assets/BR.svg">
+        <img data-lang="en-US" class="lang-icons" src="../public/assets/US.svg">
+    </div>
+</div>
+
+<script>
+    document.getElementById('lang-containner').addEventListener('click',()=>{
+        document.getElementById('lang-containner').style.display = 'none'
+    })
+</script>
