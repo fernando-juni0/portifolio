@@ -10,21 +10,18 @@
 </head>
 <body>
     <div id="containner">
-        <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/langContainner.ejs') %> 
+        <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:0})  %> 
         <main>
             <div id="main-containner">
                 <div id="content">
                     <span id="htmlTag">&lt;HTML&gt;</span><br>
                     <div id="body-content">
-                        <!-- <span class="code" style="margin-left: 2em;">&lt;BODY&gt;</span><br> -->
                         <div id="h1-content">
-                            <!-- <span class="code" style="margin-left: 4em;">&lt;H1&gt;</span><br> -->
                             <h1 id="main-title">
                                 
                             </h1><br>
-                            <!-- <span class="code" style="margin-left: 4em;">&lt;/H1&gt;</span><br> -->
                         </div>
                         <p id="paragrafo-content">
                             <span id="text-paragrafo"></span>
@@ -38,9 +35,28 @@
                     </a>
                 </div>
             </div>
-            
+            <div id="right-content">
+                <div id="right-containner">
+                    <div id="img-containner">
+                        <img src="../public/img/imagem-vazia.jpg">
+                    </div>
+                    <div id="secundary-color-picker">
+                        <span id="picker-text"></span>
+                        <div id="options-color">
+                            <div data-color="roxo" class="colors"></div>
+                            <div data-color="laranja" class="colors" style="background-color: #f77700;"></div>
+                            <div data-color="vermelho" class="colors" style="background-color: #f70000;"></div>
+                            <div data-color="rosa" class="colors" style="background-color: #f700ce;"></div>
+                            <div data-color="azul" class="colors" style="background-color: #009cf7;"></div>
+                            <div data-color="verde" class="colors" style="background-color: #15f700;"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </main>
     </div>
+    <script src="../public/js/color-picker.js"></script>
     <script src="../public/js/lang.js"></script>
 </body>
 </html>

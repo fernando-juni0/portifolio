@@ -10,13 +10,12 @@
     --main-background-black: #262626;
     --text-gray-color-primary: #D7D7D7;
     --text-gray-color-secundary: rgba(215, 215, 215, 45%);
-    --text-color-purple: #9055FF;
+    --color-secundary: #9055FF;
     --white: #fff;
     --border-color: rgba(113, 113, 113, 50%);
 }
 body,html{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
 }
 a{
     text-decoration: none;
@@ -45,7 +44,7 @@ main{
     font-family: 'Covered By Your Grace', cursive;
 }
 #main-title{
-    color: var(--text-color-purple);
+    color: var(--color-secundary);
     margin-left: 6vw;
     font-family: 'Imprima', sans-serif;
     font-size: 3.5vw;
@@ -61,7 +60,7 @@ main{
 }
 #button{
     transition: 0.5s;
-    border: 2px solid var(--text-color-purple);
+    border: 2px solid var(--color-secundary);
     min-width: 120px;
     width: 13vw;
     min-height: 30px;
@@ -83,13 +82,13 @@ main{
     text-align: center;
 }
 #contact-button{
-    color: var(--text-color-purple);
+    color: var(--color-secundary);
     font-family: 'Inter', sans-serif;
     font-size: 1.2vw;
 
 }
 #button:hover{
-    box-shadow: inset 0 0 10px 0 var(--text-color-purple), 0 0 10px 0 var(--text-color-purple);
+    box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
     transition: 0.5s;
 }
 
@@ -171,4 +170,13 @@ main{
     #button{
         bottom: 4vh;
     }
+    body,html{
+        height: 100vh;
+    }
 }
+@media screen and (max-width: 1200px) {
+    main{
+        flex-direction: column;
+    }
+}
+

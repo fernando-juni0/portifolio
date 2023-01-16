@@ -1,8 +1,12 @@
 
 header{
     width: 18em;
-    background-color: var(--secundary-black);
+    top: 0;
+    left: 0;
     height: 100%;
+    position: sticky;
+    background-color: var(--secundary-black);
+    
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
@@ -54,7 +58,7 @@ header{
 }
 
 .navLinks:hover{
-    color: var(--text-color-purple);
+    color: var(--color-secundary);
     transition: 0.5s;
 }
 #icons{
@@ -63,7 +67,7 @@ header{
     justify-content: center;
 }
 .select{
-    color: var(--text-color-purple);
+    color: var(--color-secundary);
     font-weight: bold;
     font-size: 1.2em;
     text-decoration: none;
@@ -83,7 +87,7 @@ footer{
     
 }
 #lang_selected{
-    width: 4em;
+    width: 3em;
     margin-right: 1vw;
     margin-bottom: 0.8vh;
     cursor: pointer;
@@ -113,15 +117,15 @@ footer{
 }
 
 .hamburger .line:nth-child(1) {
-    background-color: #a77a33;
+    background-color: var(--color-secundary);
 }
 
 .hamburger .line:nth-child(2) {
-    background-color: #633200;
+    background-color: var(--text-gray-color-primary);
 }
 
 .hamburger .line:nth-child(3) {
-    background-color: #a77a33;
+    background-color: var(--color-secundary);
 }
 .hamburger.isactive{
     z-index: 120;
@@ -173,12 +177,10 @@ footer{
         left: -200%;
     }
     #main-containner{
-        margin-top: 8vh;
+        margin-top: 4em;
     }
     .hamburger{
         display: block;
     }
-    #lang_selected{
-        width: 4em;
-    }
+
 }

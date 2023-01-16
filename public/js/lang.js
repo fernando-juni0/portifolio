@@ -8,7 +8,8 @@ var textLangs = {
         index:{
             'main-title': "Hello, <br> My name is Fernando,<br> I'm a full-stack developer",
             'contact-button':'Contact Me!',
-            'text-paragrafo':'Back-End Developer / JavaScript Expert'
+            'text-paragrafo':'Back-End Developer / JavaScript Expert',
+            'picker-text': 'Select your favorite color!'
         },
         about:{
             "main-title":'A little about myself',
@@ -30,7 +31,9 @@ var textLangs = {
         index:{
             'main-title': "Olá, <br> Meu nome é Fernando,<br> Sou um desenvolvedor full-stack",
             'contact-button':'Entre em contato!',
-            'text-paragrafo':'Desenvolvedor Back-End / Especialista em JavaScript'
+            'text-paragrafo':'Desenvolvedor Back-End / Especialista em JavaScript',
+            'picker-text': 'Selecione a sua cor favorita!'
+
         },
         about:{
             "main-title":'Um pouco sobre mim',
@@ -72,6 +75,7 @@ function langVerification(){
             document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
             document.querySelector('#main-title').innerHTML = textIndex["main-title"]
             document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
+            document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
             return
         }
         if (index == 1) {
@@ -97,12 +101,14 @@ function langVerification(){
             return
         }
     }else if (idioma == 'pt-BR') {
+        
         langSelected.src = '../public/assets/BR.svg'
         if (index == 0) {
             let textIndex = textLangs["pt-BR"].index
             document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
             document.querySelector('#main-title').innerHTML = textIndex["main-title"]
             document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
+            document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
         }
         if (index == 1) {
             let textabout = textLangs["pt-BR"].about

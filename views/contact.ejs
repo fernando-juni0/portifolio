@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="containner">
+        <%- include('./reusable/langContainner.ejs') %> 
         <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:4}) %> 
         <main>
@@ -33,6 +34,7 @@
                     <div id="form-content">
                         <span class="code" style="margin-left: 4em;">&lt;FORM&gt;</span><br>
                             <form action="/contact/menssage" method="post">
+                                <input type="text" name="color" id="color" hidden>
                                 <div id="form-conteinner">
                                     <div id="form_inputs">
                                         <input type="text" hidden id="idioma" name="lang" value="">
@@ -55,7 +57,9 @@
     </div>
     <script>
         document.getElementById('idioma').value = localStorage.getItem('lang')
+        document.getElementById('color').value = localStorage.getItem('color')
     </script>
+    <script src="../public/js/color-picker.js"></script>
     <script src="../public/js/lang.js"></script>
 </body>
 </html>

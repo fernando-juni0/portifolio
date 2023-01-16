@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="containner">
+        <%- include('./reusable/langContainner.ejs') %> 
         <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:2})  %> 
         <main>
@@ -40,7 +41,7 @@
                     <div class="graph-col">
                         <span>Front-End</span>
                         <footer id="progress-bar">
-                            <div style="transition: 0.5s ease-out; border-radius: 20px; width: 65%; background-color: #FF0099;">.</div>
+                            <div style="transition: 0.5s ease-out; border-radius: 20px; width: 60%; background-color: #FF0099;">.</div>
                         </footer>
                     </div>
                     <div class="graph-col">
@@ -71,6 +72,7 @@
             </div>
         </main>
     </div>
+    <script src="../public/js/color-picker.js"></script>
     <script src="../public/js/lang.js"></script>
 </body>
 </html>

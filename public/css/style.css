@@ -10,13 +10,14 @@
     --main-background-black: #262626;
     --text-gray-color-primary: #D7D7D7;
     --text-gray-color-secundary: rgba(215, 215, 215, 45%);
-    --text-color-purple: #9055FF;
+    --color-secundary: #15f700;
     --white: #fff;
     --border-color: rgba(113, 113, 113, 50%);
 }
 body,html{
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    overflow-x: hidden;
+    
 }
 a{
     text-decoration: none;
@@ -27,16 +28,18 @@ a{
     height: 100%;
     display: flex;
 }
+
 main{
-    
+    display: flex;
     width: 100%;
-    height: 110%;
+    height: 100%;
     background-color: var(--main-background-black);
 }
 #content{
     padding: 15px;
     display: flex;
     width: 100%;
+    min-width: 50vw;
     flex-direction: column;
 }
 #htmlTag-bottom{
@@ -129,7 +132,7 @@ main{
 
 #button{
     transition: 0.5s;
-    border: 2px solid var(--text-color-purple);
+    border: 2px solid var(--color-secundary);
     min-width: 120px;
     width: 13vw;
     min-height: 20px;
@@ -152,12 +155,13 @@ main{
     text-align: center;
 }
 #contact-button{
-    color: var(--text-color-purple);
+    color: var(--color-secundary);
     font-family: 'Inter', sans-serif;
-    font-size: 1.2vw;
+    font-size: 1em;
+    transition: 0.5s;
 }
 #button:hover{
-    box-shadow: inset 0 0 10px 0 var(--text-color-purple), 0 0 10px 0 var(--text-color-purple);
+    box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
     transition: 0.5s;
 }
 #body-content{
@@ -167,6 +171,63 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+#right-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+#right-containner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#img-containner img{
+    width: 14vw;
+    height: 48vh;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 62px 4px var(--color-secundary);
+    -moz-box-shadow: 0px 0px 62px 4px var(--color-secundary);
+    box-shadow: 0px 0px 62px 4px var(--color-secundary);
+    transition: 0.5s;
+}
+#secundary-color-picker{
+    padding: 5px;
+    width: 21em;
+    height: 6em;
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+    border: 1px solid var( --text-gray-color-secundary);
+    border-radius: 15px;
+    background-color: var(--secundary-black);
+    text-align: center;
+}
+#picker-text{
+    color: var(--white);
+    font-size: 1.2em;
+    font-family: 'Imprima', sans-serif;
+}
+#options-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+.colors{
+    user-select: none;
+    cursor: pointer;
+    min-width: 2.4em;
+    min-height: 2.4em;
+    border-radius: 20em;
+    background-color: #9055FF;
+    color: #9055FF;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.color-selected{
+    content: url(../assets/done_white_24dp.svg);
 }
 @media screen and (min-width: 1400px) {
     #body-content, #h1-content{
@@ -190,16 +251,23 @@ main{
     #main-title{
         font-size: 3em;
     }
-    #text-paragrafo{
-        font-size: 1em;
+    #contact-button{
+        font-size: 1.4em;
     }
-
+    #main-containner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
+
 @media screen and (min-width: 1000px) {
     #body-content, #h1-content{
-        margin: 4vh 0 4vh 0;
+        margin: 3vh 0 3vh 0;
     }
-    
+    body,html{
+        height: 100%;
+    }
     #htmlTag::after{
         margin-top: 3em;
     }
@@ -210,7 +278,7 @@ main{
         margin-bottom: 4em;
     }
     #htmlTag{
-        margin: 2em 0 4em 0;
+        margin: 1em 0 3em 0;
     }
     #button{
         bottom: 4vh;
@@ -218,9 +286,6 @@ main{
 
     #main-title{
         font-size: 2.5em;
-    }
-    #text-paragrafo{
-        font-size: 0.8em;
     }
     #lang-containner{
         left: 8.5;
@@ -252,38 +317,27 @@ main{
     body{
         overflow: hidden;
     }
-}
-
-@media screen and (max-width: 1200px) {
+    body,html{
+        height: 100%;
+    }
     
+}
+@media screen and (max-width: 1200px) {
+    main{
+        flex-direction: column;
+    }
+    #right-content{
+        margin-top: 5em;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
     #lang-containner{
         left: 8vw;
     }
-}
-@media screen and (max-width: 1000px) {
-    #body-content, #h1-content{
-        margin: 0vh 0 0vh 0;
-    }
-    #htmlTag::after{
-        margin-top: 2em;
-    }
-    #htmlTag-bottom::before{
-        margin-top: -2em;
-    }
-    #paragrafo-content{
-        margin-bottom: 2em;
-    }
-    #htmlTag{
-        margin: 1em 0 2em 0;
-    }
-    #button{
-        margin-top: 0;
-    }
-    #lang_selected{
-        width: 3em;
-    }
-    #lang-containner{
-        left: 7vw;
+    #img-containner img{
+        width: 14em;
+        height: 20em;
     }
 }
 

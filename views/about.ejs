@@ -10,33 +10,27 @@
 </head>
 <body>
     <div id="containner">
+        <%- include('./reusable/langContainner.ejs') %> 
         <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:1})  %> 
         <main>
-            <div id="content">
-                <span class="code">&lt;HTML&gt;</span><br><br>
+            <div id="main-containner">
+                <span id="htmlTag">&lt;HTML&gt;</span><br>
                 <div id="body-content">
-                    <span class="code" style="margin-left: 2em;">&lt;BODY&gt;</span><br><br>
                     <div id="h1-content">
-                        <span class="code" style="margin-left: 4em;">&lt;H2&gt;</span><br>
                         <h1 id="main-title">
  
                         </h1><br>
-                        <span class="code" style="margin-left: 4em;">&lt;/H2&gt;</span><br><br>
                     </div>
-                    <p style="width: 50vw; margin-left: 4em;">
-                        <span class="code">&lt;p&gt;</span><br>
-                            <div style=" width: 50vw; margin-left: 5rem;" id="text-paragrafo">
-                                
-                            </div><br>
-                        <span class="code" style="margin-top: -0.8em; margin-left: 4em;" >&lt;/p&gt;</span>
+                    <p id="paragrafo-content">
+                        <span id="text-paragrafo"></span>
                     </p><br><br>
-                    <span class="code" style="margin-left: 2em;">&lt;/BODY&gt;</span><br><br>
                 </div>
-                <span class="code">&lt;/HTML&gt;</span><br><br>
+                <span id="htmlTag-bottom">&lt;/HTML&gt;</span><br>
             </div>
         </main>
     </div>
+    <script src="../public/js/color-picker.js"></script>
     <script src="../public/js/lang.js"></script>
 </body>
 </html>
