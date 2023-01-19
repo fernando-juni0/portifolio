@@ -11,6 +11,9 @@ header{
     flex-direction: column;
     font-family: 'Inter', sans-serif;
 }
+img,br,a{
+    user-select: none;
+}
 #logo{
     display: flex;
     flex-direction: column;
@@ -98,6 +101,7 @@ footer{
     margin-left: 15px;
     margin-top: 5px;
     float: left;
+    z-index: 1000;
     transition: opacity .3s;
     position: fixed;
 }
@@ -170,7 +174,7 @@ footer{
 }
 
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 1200px) {
     header{
         
         position: fixed;

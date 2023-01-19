@@ -14,26 +14,18 @@
         <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:4}) %> 
         <main>
-            <div id="content">
-                <span class="code">&lt;HTML&gt;</span>
-                <div id="body-content">
-                    <span class="code" style="margin-left: 2em;">&lt;BODY&gt;</span><br>
-                    <div id="h1-content">
-                        <span class="code" style="margin-left: 4em;">&lt;H2&gt;</span>
-                        <h1 id="main-title">
-                            
-                        </h1>
-                        <span class="code" style="margin-left: 4em;">&lt;/H2&gt;</span><br>
-                    <p style="margin-left: 4em;">
-                        <span class="code">&lt;p&gt;</span><br>
-                            <div id="text-paragrafo">
-                                
-                            </div><br>
-                        <span class="code" style="margin-top: -0.8em; margin-left: 4em;" >&lt;/p&gt;</span>
-                    </p><br>
-                    <div id="form-content">
-                        <span class="code" style="margin-left: 4em;">&lt;FORM&gt;</span><br>
-                            <form action="/contact/menssage" method="post">
+            <div id="main-containner">
+                <div id="content">
+                    <span id="htmlTag">&lt;HTML&gt;</span><br>
+                    <div id="body-content">
+                        <div id="h1-content">
+                            <h1 id="main-title"></h1>
+                            <p id="paragrafo-content">
+                                <span id="text-paragrafo"></span>
+                            </p>
+                        <div id="form-content">
+                            <span id="FormTag">&lt;FORM&gt;</span><br>
+                            <form action="/contact/menssage" id="form" method="post">
                                 <input type="text" name="color" id="color" hidden>
                                 <div id="form-conteinner">
                                     <div id="form_inputs">
@@ -47,11 +39,11 @@
                                     <button id="enviar" type="submit"></button>
                                 </div>
                             </form>
-                        <span class="code" style="margin-left: 4em;">&lt;/FORM&gt;</span><br>
+                            <span id="FormTagBottom">&lt;/FORM&gt;</span><br>
+                        </div>
                     </div>
-                    <span class="code" style="margin-left: 2em;">&lt;/BODY&gt;</span>
+                    <span id="htmlTag-bottom">&lt;/HTML&gt;</span><br>
                 </div>
-                <span class="code">&lt;/HTML&gt;</span>
             </div>
         </main>
     </div>

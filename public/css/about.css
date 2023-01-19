@@ -4,19 +4,23 @@
     box-sizing: border-box;
     outline: none;
 }
+
 :root{
     --primary-black: #111111;
     --secundary-black: #2F2F2F;
     --main-background-black: #262626;
     --text-gray-color-primary: #D7D7D7;
     --text-gray-color-secundary: rgba(215, 215, 215, 45%);
-    --color-secundary: #9055FF;
+    --color-secundary: ;
     --white: #fff;
     --border-color: rgba(113, 113, 113, 50%);
 }
 body,html{
     width: 100%;
     overflow-x: hidden;
+}
+img,br,a{
+    user-select: none;
 }
 a{
     text-decoration: none;
@@ -85,6 +89,7 @@ main{
 }
 
 #htmlTag-bottom{
+    user-select: none;
     margin-top: 1.5em;
     font-family: 'Covered By Your Grace', cursive;
     color: var(--text-gray-color-secundary);
@@ -102,6 +107,7 @@ main{
     font-weight: 200;
 }
 #htmlTag{
+    user-select: none;
     color: var(--text-gray-color-secundary);
     font-size: 1em;
     font-family: 'Covered By Your Grace', cursive;

@@ -4,20 +4,20 @@
     box-sizing: border-box;
     outline: none;
 }
+img,br,a{
+    user-select: none;
+}
 :root{
     --primary-black: #111111;
     --secundary-black: #2F2F2F;
     --main-background-black: #262626;
     --text-gray-color-primary: #D7D7D7;
     --text-gray-color-secundary: rgba(215, 215, 215, 45%);
-    --color-secundary: #9055FF;
+    --color-secundary: ;
     --white: #fff;
     --border-color: rgba(113, 113, 113, 50%);
 }
-body,html{
-    width: 100vw;
-    height: 100vh;
-}
+
 a{
     text-decoration: none;
     color: var(--text-gray-color-primary);
@@ -32,31 +32,25 @@ main{
     height: 100%;
     background-color: var(--main-background-black);
 }
+#main-containner{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 #content{
     padding: 15px;
     display: flex;
-    height: 90vh;
+    height: 100%;
     width: 100%;
+    justify-content: center;
     flex-direction: column;
-}
-.code{
-    color: var(--text-gray-color-secundary);
-    font-family: 'Covered By Your Grace', cursive;
 }
 #main-title{
     color: var(--color-secundary);
-    margin-left: 6vw;
+    margin-left: 1.5em;
     font-family: 'Imprima', sans-serif;
-    font-size: 3.5vw;
+    font-size: 4em;
     
-}
-#text-paragrafo{
-    font-size: 1.2vw;
-    color: var(--text-gray-color-primary);
-    font-family: 'Imprima', sans-serif;
-    max-width: 40vw;
-    margin-left: 6rem;
-
 }
 #body-content, #h1-content{
     display: flex;
@@ -65,13 +59,16 @@ main{
 }
 
 #form-conteinner{
-    margin: 15px 0 15px 5vw;
+    margin: 15px 0 15px 7.5em;
 }
 #form_inputs input:first-child{
     margin-right: 0.5vw;
 }
 #form_inputs input{
+    margin-top: 5px;
+    height: 2em;
     width: 18vw;
+    min-width: 200px;
     padding: 0.5vw;
     font-size: 1em;
     background-color: var(--secundary-black);
@@ -82,6 +79,7 @@ main{
 }
 #form-textarea textarea{
     width: 36.2vw;
+    min-width: 405px;
     height: 16vh;
     resize: none;
     border: none;
@@ -96,17 +94,150 @@ main{
     border: 1px solid var(--color-secundary);
     background-color: transparent;
     width: 5vw;
+    min-width: 80px;
     height: 5vh;
-    font-size: 1vw;
+    min-height: 40px;
+    font-size: 0.8em;
     color: var(--color-secundary);
     margin-top: 1vh;
     cursor: pointer;
     transition: 0.5s;
 }
 #enviar:hover{
+    text-shadow: 0px 0px 13px var(--color-secundary);
     box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
     transition: 0.5s;
 }
+
+
+
+
+#htmlTag-bottom{
+    user-select: none;
+    margin-top: 1.5em;
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    font-weight: 200;
+}
+#htmlTag-bottom::before{
+    content: '</BODY>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-top: -2em;
+    margin-left: 1em;
+    font-weight: 200;
+}
+#htmlTag{
+    user-select: none;
+    color: var(--text-gray-color-secundary);
+    font-size: 1em;
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+#htmlTag::after{
+    content: '<BODY>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-top: 1.5em;
+    margin-left: -1em;
+    font-weight: 200;
+}
+
+#paragrafo-content{
+    margin-left: 7em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 45%;
+}
+#text-paragrafo{
+    font-size: 1.2em;
+    color: var(--text-gray-color-primary);
+    font-family: 'Imprima', sans-serif;
+}
+#text-paragrafo::before{
+    content: '<P>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-left: -1.8em;
+    font-weight: 200;
+}
+#text-paragrafo::after{
+    content: '</P>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-left: 0.5em;
+    font-weight: 200;
+}
+
+#main-title::before{
+    content: '<H1>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-top: -1.2rem;
+    margin-left: -1em;
+    font-weight: 200;
+}
+#main-title::after{
+    content: '</H1>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
+    font-weight: 200;
+}
+#main-title::before{
+    content: '<H1>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-top: -1.2rem;
+    margin-left: -1em;
+    font-weight: 200;
+}
+#main-title::after{
+    content: '</H1>';
+    font-family: 'Covered By Your Grace', cursive;
+    color: var(--text-gray-color-secundary);
+    font-size: 1rem;
+    position: absolute;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
+    font-weight: 200;
+}
+#FormTag{
+    margin-left: 5.5em;
+    user-select: none;
+    color: var(--text-gray-color-secundary);
+    font-size: 1em;
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+#FormTagBottom{
+    margin-left: 5.5em;
+    user-select: none;
+    color: var(--text-gray-color-secundary);
+    font-size: 1em;
+    font-family: 'Covered By Your Grace', cursive;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+
 
 @media screen and (min-width: 1400px) {
     #form-textarea textarea{
@@ -115,7 +246,10 @@ main{
     #body-content, #h1-content{
         margin: 2vh 0 2vh 0;
     }
-    #button{
-        bottom: 4vh;
+    #enviar{
+        font-size: 1.2em;
+    }
+    body,html{
+        height: 100%;
     }
 }

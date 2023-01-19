@@ -4,13 +4,16 @@
     box-sizing: border-box;
     outline: none;
 }
+img,br,a{
+    user-select: none;
+}
 :root{
     --primary-black: #111111;
     --secundary-black: #2F2F2F;
     --main-background-black: #262626;
     --text-gray-color-primary: #D7D7D7;
     --text-gray-color-secundary: rgba(215, 215, 215, 45%);
-    --color-secundary: #15f700;
+    --color-secundary: ;
     --white: #fff;
     --border-color: rgba(113, 113, 113, 50%);
 }
@@ -43,6 +46,7 @@ main{
     flex-direction: column;
 }
 #htmlTag-bottom{
+    user-select: none;
     margin-top: 1.5em;
     font-family: 'Covered By Your Grace', cursive;
     color: var(--text-gray-color-secundary);
@@ -60,6 +64,7 @@ main{
     font-weight: 200;
 }
 #htmlTag{
+    user-select: none;
     color: var(--text-gray-color-secundary);
     font-size: 1em;
     font-family: 'Covered By Your Grace', cursive;
@@ -133,7 +138,7 @@ main{
 #button{
     transition: 0.5s;
     border: 2px solid var(--color-secundary);
-    min-width: 120px;
+    min-width: 160px;
     width: 13vw;
     min-height: 20px;
     height: 8vh;
@@ -158,6 +163,10 @@ main{
     color: var(--color-secundary);
     font-family: 'Inter', sans-serif;
     font-size: 1em;
+    transition: 0.5s;
+}
+#button:hover #contact-button{
+    text-shadow: 0px 0px 13px var(--color-secundary);
     transition: 0.5s;
 }
 #button:hover{
@@ -186,7 +195,7 @@ main{
 }
 #img-containner img{
     width: 14vw;
-    height: 48vh;
+    height: 42vh;
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 62px 4px var(--color-secundary);
     -moz-box-shadow: 0px 0px 62px 4px var(--color-secundary);
@@ -283,12 +292,8 @@ main{
     #button{
         bottom: 4vh;
     }
-
     #main-title{
         font-size: 2.5em;
-    }
-    #lang-containner{
-        left: 8.5;
     }
 } 
 @media screen and (max-width: 1000px) {
@@ -310,34 +315,19 @@ main{
     #button{
         bottom: 3vh;
     }
-
-    
-}
-@media screen and (min-width: 740px) {
-    body{
-        overflow: hidden;
-    }
-    body,html{
-        height: 100%;
-    }
-    
-}
-@media screen and (max-width: 1200px) {
     main{
         flex-direction: column;
     }
     #right-content{
         margin-top: 5em;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         display: flex;
-    }
-    #lang-containner{
-        left: 8vw;
     }
     #img-containner img{
         width: 14em;
         height: 20em;
     }
+    
 }
 
