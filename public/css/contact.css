@@ -237,9 +237,20 @@ main{
     font-weight: 200;
     margin-bottom: 1em;
 }
+@media screen and (max-width: 600px) {
+    #form-textarea textarea{
+        min-width: 60vw;
+    }
+    #form_inputs input:nth-child(3){
+        margin-top: 10px;
+    }
+    #form_inputs input{
+        width: 60vw;
+        min-width: 18vw;
+    }
+}
 
-
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
     #form-textarea textarea{
         height: 24vh;
     }
