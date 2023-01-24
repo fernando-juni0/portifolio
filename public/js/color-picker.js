@@ -60,6 +60,7 @@ document.querySelectorAll('.colors').forEach(item=>{
     item.addEventListener('click',()=>{
         let color = item.getAttribute('data-color')
         localStorage.setItem('color', color);
+        saveNot()
         colorVerification()
     })
 })

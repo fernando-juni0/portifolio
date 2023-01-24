@@ -47,11 +47,13 @@
             </div>
         </main>
     </div>
+    <%- include('./reusable/scripts.ejs') %> 
+    
     <script>
+        
+        document.getElementById('enviar').addEventListener('click',()=>{contact()})
         document.getElementById('idioma').value = localStorage.getItem('lang')
         document.getElementById('color').value = localStorage.getItem('color')
     </script>
-    <script src="../public/js/color-picker.js"></script>
-    <script src="../public/js/lang.js"></script>
 </body>
 </html>

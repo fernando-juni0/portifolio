@@ -62,10 +62,8 @@ var textLangs = {
 langVerification()
 function langVerification(){
     const idioma = localStorage.getItem('lang')
-    console.log(idioma);
     if (idioma == null || idioma == undefined) {
         let navLang = window.navigator.language
-        console.log(navLang);
         localStorage.setItem('lang', navLang);
     }
     if (idioma == 'en-US') {
@@ -162,6 +160,8 @@ document.querySelectorAll('.lang-icons').forEach((item)=>{
         setTimeout(()=>{     
             langVerification()
             document.getElementById('load-containner').style.display = "none"
+            saveNot()
         }, 2000);
+        
     })
 })

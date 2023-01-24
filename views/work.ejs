@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./reusable/head.ejs')  %> 
+    <link rel="stylesheet" href="../public/css/work.css">
+    <title>Portfólio / Fernando</title>
+</head>
+<body>
+    <div id="containner">
+        <%- include('./reusable/langContainner.ejs') %> 
+        <%- include('./reusable/reload.ejs') %> 
+        <%- include('./reusable/header.ejs',{index:4}) %> 
+        <main>
+            <div id="main-containner">
+                <div id="main-row">
+                    <div class="main-col">
+                        <img src="../public/img/twitter-logo.png">
+                        <span class="title">Twitter Clone</span>
+                        <div class="descricao">
+                            Clone do twitter
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <%- include('./reusable/scripts.ejs') %> 
+</body>
+</html>
