@@ -14,10 +14,19 @@ const lang = {
     }
 }
 var idioma = localStorage.getItem('lang')
+document.querySelectorAll('.lang-icons').forEach((item)=>{
+    item.addEventListener('click',()=>{
+        setTimeout(()=>{     
+            idioma = localStorage.getItem('lang')
+        }, 2100);
+
+    })
+})
+
+
 if (location.pathname == '/') {
     mensage()
 }
-
 function mensage() {
     document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="position: absolute; top: -50px; left: 50%; transform: translate(-50%, -50%); transition: 1s; z-index: 100; white-space: nowrap; font-size: 1.2em; color: #fff; text-shadow: 0px 0px 25px #fff; font-weight: bold; font-family: 'Inter', sans-serif;">${idioma == "pt-BR" ? lang["pt-BR"].mensage : lang["en-US"].mensage}</div>`
     

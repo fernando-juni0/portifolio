@@ -1,40 +1,62 @@
+document.getElementById('newColor').addEventListener('click',()=>{
+    document.getElementById('color-input').click()
+})
 
+var full_colors = [
+    {
+        nome:'select',
+        hex:null
+    },
+    {
+        nome:'roxo',
+        hex: '#9055FF'
+    },
 
+    {
+        nome:'vermelho',
+        hex:'#f70000'
+    },
+    {
+        nome:'rosa',
+        hex:'#f700ce'
+    },
+    {
+        nome:'verde',
+        hex:'#15f700'
+    },
+]
 
+let inputColor = document.getElementById('color-input') 
+
+inputColor.addEventListener('change',()=>{
+    localStorage.setItem('color-sec', inputColor.value)
+    full_colors[0].hex = inputColor.value
+    document.getElementById('color-sec').style.backgroundColor = inputColor.value
+    if (localStorage.getItem('color') == 'select') {
+        document.body.style.setProperty('--color-secundary', inputColor.value);
+    }else{
+        localStorage.setItem('color', "select")
+        colorVerification()
+    }
+    
+})
+
+var colorSec = localStorage.getItem('color-sec')
+
+if (colorSec == null || colorSec == undefined) {
+    
+}else{
+    full_colors[0].hex = colorSec
+    document.getElementById('color-sec').style.backgroundColor = colorSec
+}
 colorVerification()
 function colorVerification() {
     let color = localStorage.getItem('color')
-
+    
     if (color == null || color == undefined) {
         localStorage.setItem('color', 'roxo');
     }
-
-    let full_colors = [
-        {
-            nome:'roxo',
-            hex: '#9055FF'
-        },
-        {
-            nome:'laranja',
-            hex:'#f77700'
-        },
-        {
-            nome:'vermelho',
-            hex:'#f70000'
-        },
-        {
-            nome:'rosa',
-            hex:'#f700ce'
-        },
-        {
-            nome:'azul',
-            hex:'#009cf7'
-        },
-        {
-            nome:'verde',
-            hex:'#15f700'
-        },
-    ]
+   
     let other_colors = []
     var hex = null
     full_colors.forEach(item=>{
@@ -49,11 +71,8 @@ function colorVerification() {
     document.querySelector(`[data-color=${other_colors[1].nome}]`).classList.remove('color-selected')
     document.querySelector(`[data-color=${other_colors[2].nome}]`).classList.remove('color-selected')
     document.querySelector(`[data-color=${other_colors[3].nome}]`).classList.remove('color-selected')
-    document.querySelector(`[data-color=${other_colors[4].nome}]`).classList.remove('color-selected')
     document.querySelector(`[data-color=${color}]`).classList.toggle('color-selected')
 }
-
-
 
 
 document.querySelectorAll('.colors').forEach(item=>{

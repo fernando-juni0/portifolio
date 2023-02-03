@@ -12,16 +12,35 @@
     <div id="containner">
         <%- include('./reusable/langContainner.ejs') %> 
         <%- include('./reusable/reload.ejs') %> 
-        <%- include('./reusable/header.ejs',{index:4}) %> 
+        <%- include('./reusable/header.ejs',{index:3}) %> 
         <main>
             <div id="main-containner">
+                <div id="title-containner">
+                    <h1 id="work-title"></h1>
+                    <div id="subtitle-containner">
+                        <span id="work-subTitle"></span>
+                    </div>
+                </div>
                 <div id="main-row">
-                    <div class="main-col">
+                    <div class="main-col" onclick="window.open('https://github.com/fernando-juni0/Twitter_Clone') ">
                         <img src="../public/img/twitter-logo.png">
                         <span class="title">Twitter Clone</span>
-                        <div class="descricao">
-                            Clone do twitter
-                        </div>
+                        <div class="descricao" id="twitter-descricao"></div>
+                    </div>
+                    <div class="main-col" onclick="window.open('https://infoeduc.com.br') ">
+                        <img src="../public/img/infoeduc.png">
+                        <span class="title">InfoEduc Company</span>
+                        <div class="descricao" id="infoeduc-descricao"></div>
+                    </div>
+                    <div class="main-col" onclick="window.open('https://github.com/fernando-juni0/Spotify-Clone') ">
+                        <img src="../public/img/spotify-icon.png">
+                        <span class="title">Spotify Clone</span>
+                        <div class="descricao" id="spotify-descricao"></div>
+                    </div>
+                    <div class="main-col" onclick="window.open('https://github.com/fernando-juni0/Spotify-Clone') ">
+                        <img src="../public/img/logo.png">
+                        <span class="title">Portfólio</span>
+                        <div class="descricao" id="portifolio-descricao"></div>
                     </div>
                 </div>
             </div>
