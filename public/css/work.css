@@ -126,7 +126,7 @@ main{
 #work-title{
     font-family: 'Imprima', sans-serif;
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--color-secundary);
 }
 #subtitle-containner{
     width: 65%;

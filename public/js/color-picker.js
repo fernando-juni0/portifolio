@@ -1,7 +1,4 @@
-document.getElementById('newColor').addEventListener('click',()=>{
-    document.getElementById('color-input').click()
-})
-
+var colorSec = localStorage.getItem('color-sec')
 var full_colors = [
     {
         nome:'select',
@@ -26,29 +23,39 @@ var full_colors = [
     },
 ]
 
-let inputColor = document.getElementById('color-input') 
+if (document.getElementById('index').value == 0) {
+    document.getElementById('newColor').addEventListener('click',()=>{
+        document.getElementById('color-input').click()
+    })
+    let inputColor = document.getElementById('color-input') 
 
-inputColor.addEventListener('change',()=>{
-    localStorage.setItem('color-sec', inputColor.value)
-    full_colors[0].hex = inputColor.value
-    document.getElementById('color-sec').style.backgroundColor = inputColor.value
-    if (localStorage.getItem('color') == 'select') {
-        document.body.style.setProperty('--color-secundary', inputColor.value);
+    inputColor.addEventListener('change',()=>{
+        localStorage.setItem('color-sec', inputColor.value)
+        full_colors[0].hex = inputColor.value
+        document.getElementById('color-sec').style.backgroundColor = inputColor.value
+        if (localStorage.getItem('color') == 'select') {
+            document.body.style.setProperty('--color-secundary', inputColor.value);
+        }else{
+            localStorage.setItem('color', "select")
+            colorVerification()
+        }
+        
+    })
+    
+
+    if (colorSec == null || colorSec == undefined) {
+        
     }else{
-        localStorage.setItem('color', "select")
-        colorVerification()
+        full_colors[0].hex = colorSec
+        document.getElementById('color-sec').style.backgroundColor = colorSec
     }
-    
-})
-
-var colorSec = localStorage.getItem('color-sec')
-
-if (colorSec == null || colorSec == undefined) {
-    
-}else{
-    full_colors[0].hex = colorSec
-    document.getElementById('color-sec').style.backgroundColor = colorSec
 }
+
+
+
+
+
+
 colorVerification()
 function colorVerification() {
     let color = localStorage.getItem('color')
@@ -66,12 +73,17 @@ function colorVerification() {
             other_colors.push(item)
         }
     })
+    if (color == 'select') {
+        hex = colorSec
+    }
     document.body.style.setProperty('--color-secundary', hex);
-    document.querySelector(`[data-color=${other_colors[0].nome}]`).classList.remove('color-selected')
-    document.querySelector(`[data-color=${other_colors[1].nome}]`).classList.remove('color-selected')
-    document.querySelector(`[data-color=${other_colors[2].nome}]`).classList.remove('color-selected')
-    document.querySelector(`[data-color=${other_colors[3].nome}]`).classList.remove('color-selected')
-    document.querySelector(`[data-color=${color}]`).classList.toggle('color-selected')
+    if (document.getElementById('index').value == 0) {
+        document.querySelector(`[data-color=${other_colors[0].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${other_colors[1].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${other_colors[2].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${other_colors[3].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${color}]`).classList.toggle('color-selected')
+    }
 }
 
 
