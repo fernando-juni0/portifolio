@@ -1,4 +1,5 @@
 <style>
+    
     #load-containner{
         width: 100vw;
         height: 100vh;
@@ -6,85 +7,208 @@
         display: none;
         justify-content: center;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.055);  
+        background-color: rgba(0, 0, 0, 0.541);  
         backdrop-filter: blur(5px);
         transition: 0.3s;
         z-index: 1000;
     }
 
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),90%,95%);
+	--fg: hsl(var(--hue),90%,5%);
+	--primary: hsl(var(--hue),90%,50%);
+	--trans-dur: 0.3s;
+	
+}
 
-    .pl,
-    .pl__worm {
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-    }
-    .pl {
-        animation-name: bump;
-        animation-timing-function: linear;
-        width: 8em;
-        height: 8em;
-    }
-    .pl__ring {
-        stroke: hsla(var(--hue),10%,10%,0.1);
-        transition: stroke 0.3s;
-    }
-    .pl__worm {
-        animation-name: worm;
-        animation-timing-function: cubic-bezier(0.42,0.17,0.75,0.83);
-    }
+.pl {
+	display: block;
+	overflow: visible;
+	width: 8em;
+	height: 8em;
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+.pl__ring {
+	stroke: hsla(var(--hue),90%,5%,0.1);
+	transition: stroke var(--trans-dur);
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+.pl__worm {
+	stroke: var(--primary);
+	transform-origin: 64px 64px;
+	visibility: hidden;
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+.pl__worm--moving {
+	animation: worm 8s linear;
+	visibility: visible;
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
 
-    /* Dark theme */
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --bg: hsl(var(--hue),10%,10%);
-            --fg: hsl(var(--hue),10%,90%);
-        }
-        .pl__ring {
-            stroke: hsla(var(--hue),10%,90%,0.1);
-        }
-    }
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),90%,5%);
+		--fg: hsl(var(--hue),90%,95%);
+	}
+	.pl__ring {
+		stroke: hsla(var(--hue),90%,95%,0.1);
+        font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+	}
+}
 
-    /* Animations */
-    @keyframes bump {
-        from,
-        42%,
-        46%,
-        51%,
-        55%,
-        59%,
-        63%,
-        67%,
-        71%,
-        74%,
-        78%,
-        81%,
-        85%,
-        88%,
-        92%,
-        to { transform: translate(0,0); }
-        44% { transform: translate(1.33%,6.75%); }
-        53% { transform: translate(-16.67%,-0.54%); }
-        61% { transform: translate(3.66%,-2.46%); }
-        69% { transform: translate(-0.59%,15.27%); }
-        76% { transform: translate(-1.92%,-4.68%); }
-        83% { transform: translate(9.38%,0.96%); }
-        90% { transform: translate(-4.55%,1.98%); }
-    }
-    @keyframes worm {
-        from { stroke-dashoffset: 10; }
-        25% { stroke-dashoffset: 295; }
-        to { stroke-dashoffset: 1165; }
-    }
+/* Animations */
+@keyframes worm {
+	from {
+		stroke-dasharray: 22 307.86 22;
+		transform: rotate(0);
+	}
+	to {
+		stroke-dasharray: 2 347.86 2;
+		transform: rotate(4turn);
+	}
+}
+
 </style>
 <div id="load-containner">
     <svg class="pl" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="hsl(193,90%,55%)" />
-                <stop offset="100%" stop-color="hsl(223,90%,55%)" />
-            </linearGradient>
-        </defs>
-        <circle class="pl__ring" r="56" cx="64" cy="64" fill="none" stroke="hsla(0,10%,10%,0.1)" stroke-width="16" stroke-linecap="round" />
-        <path class="pl__worm" d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z" fill="none" stroke="url(#pl-grad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="44 1111" stroke-dashoffset="10" />
-    </svg>
+		<g fill="none" stroke-linecap="round" stroke-width="16" transform="rotate(-90,64,64)">
+			<circle class="pl__ring" r="56" cx="64" cy="64" stroke="#ddd" />
+			<circle class="pl__worm pl__worm--moving" r="56" cx="64" cy="64" stroke="currentColor" stroke-dasharray="22 307.86 22" data-worm />
+		</g>
+		<g data-particles></g>
+	</svg>
 </div>
+
+<script>
+    window.addEventListener("DOMContentLoaded",() => {
+	const dp = new DecayingPreloader(".pl");
+});
+
+class DecayingPreloader {
+	particles = [];
+	totalParticles = 120;
+	replayTimeout = null;
+
+	constructor(el) {
+		this.el = document.querySelector(el);
+		this.particleGroup = this.el?.querySelector("[data-particles]");
+		this.worm = this.el?.querySelector("[data-worm]");
+
+		this.init();
+	}
+	init() {
+		this.spawnParticles(this.totalParticles);
+		this.worm?.addEventListener("animationend",this.replayParticles.bind(this));
+	}
+	createParticle(x,y,r,delay) {
+		const particle = new DecayParticle(x,y,r,delay);
+		this.particleGroup?.appendChild(particle.g);
+		// animation params
+		particle.gAnimation = particle.g.animate(
+			[
+				{ transform: `translate(${particle.x}px,0)` },
+				{ transform: `translate(${particle.x + particle.dx}px,0)` },
+			],
+			{ delay: particle.delay, duration: particle.duration, easing: "linear" }
+		);
+		particle.cAnimation = particle.c.animate(
+			[
+				{ opacity: 1, transform: `translate(0,${particle.y}px) scale(1)` },
+				{ opacity: 1, transform: `translate(0,${particle.y + particle.dy}px) scale(0)` },
+			],
+			{ delay: particle.delay, duration: particle.duration, easing: "ease-in" }
+		);
+		// finally create the particle
+		this.particles.push(particle);
+	}
+	replayParticles() {
+		const movingClass = "pl__worm--moving";
+		const timeout = 800;
+		// retrigger the worm animation
+		this.worm.classList.remove(movingClass);
+		clearTimeout(this.replayTimeout);
+
+		this.replayTimeout = setTimeout(() => {
+			this.worm.classList.add(movingClass);
+			// restart the particles
+			this.particles.forEach(particle => {
+				particle.gAnimation.finish();
+				particle.gAnimation.play();
+				particle.cAnimation.finish();
+				particle.cAnimation.play();
+			});
+		},timeout);
+	}
+	spawnParticles(count = 1) {
+		const centerXY = 64;
+		const radius = 56;
+		const loops = 4;
+		const maxDelayPerLoop = 2000;
+		const particlesPerLoop = Math.round(this.totalParticles / loops);
+		const angleOffset = -2;
+		const particleRadius = 7;
+
+		for (let c = 0; c < count; ++c) {
+			// place along the ring
+			const percent = Utils.easeInOutCubic(c % particlesPerLoop / particlesPerLoop);
+			const angle = 360 * percent + angleOffset;
+			const x = centerXY + radius * Math.sin(Utils.degToRad(angle));
+			const y = centerXY - radius * Math.cos(Utils.degToRad(angle));
+			const loopsCompleted = Math.floor(c / particlesPerLoop);
+			const delay = maxDelayPerLoop * percent + maxDelayPerLoop * loopsCompleted;
+
+			this.createParticle(x,y,particleRadius,delay);
+		}
+	}
+}
+class DecayParticle {
+	duration = 500;
+	dx = Utils.randomFloat(-16,16);
+	dy = Utils.randomFloat(32,64);
+	// group
+	gAnimation = null;
+	// circle
+	cAnimation = null;
+
+	constructor(x = 0,y = 0,r = 1,delay = 0) {
+		this.x = x;
+		this.y = y;
+		this.r = r;
+		this.delay = delay;
+		// namespace
+		const ns = "http://www.w3.org/2000/svg";
+		// group to move horizontally in the animation
+		const g = document.createElementNS(ns,"g");
+		g.setAttributeNS(null,"transform",`translate(${x},0)`);
+		// circle to move vertically in the animation
+		const circle = document.createElementNS(ns,"circle");
+		circle.setAttributeNS(null,"opacity","0");
+		circle.setAttributeNS(null,"r",`${this.r}`);
+		circle.setAttributeNS(null,"transform",`translate(0,${y})`);
+		circle.setAttributeNS(null,"fill","var(--primary)");
+
+		this.g = g;
+		this.c = circle;
+
+		this.g.appendChild(this.c);
+	}
+}
+class Utils {
+	static degToRad(deg) {
+		return deg * Math.PI / 180;
+	}
+	// ease methods from https://gist.github.com/gre/1650294
+	static easeInOutCubic(t) {
+		return t < 0.5 ? 4 * t ** 3 : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+	}
+	static randomFloat(min = 0,max = 2**32) {
+		const percent = crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
+		const relativeValue = (max - min) * percent;
+		const plusMin = min + relativeValue;
+
+		return +(plusMin).toFixed(3);
+	}
+}
+</script>

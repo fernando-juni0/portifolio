@@ -1,4 +1,6 @@
 var colorSec = localStorage.getItem('color-sec')
+
+
 var full_colors = [
     {
         nome:'select',
@@ -22,6 +24,37 @@ var full_colors = [
         hex:'#15f700'
     },
 ]
+
+colorVerification()
+function colorVerification() {
+    let color = localStorage.getItem('color')
+    
+    if (color == null || color == undefined) {
+        localStorage.setItem('color', 'roxo');
+    }
+   
+    let other_colors = []
+    var hex = null
+    full_colors.forEach(item=>{
+        if (item.nome == color) {
+            hex = item.hex
+        }else{
+            other_colors.push(item)
+        }
+    })
+    if (color == 'select') {
+        hex = colorSec
+    }
+    document.body.style.setProperty('--color-secundary', hex);
+    if (document.getElementById('index').value == 0) {
+        document.querySelector(`[data-color=${other_colors[0].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${other_colors[1].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${other_colors[2].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${other_colors[3].nome}]`).classList.remove('color-selected')
+        document.querySelector(`[data-color=${color}]`).classList.toggle('color-selected')
+    }
+}
+
 
 if (document.getElementById('index').value == 0) {
     document.getElementById('newColor').addEventListener('click',()=>{
@@ -56,35 +89,6 @@ if (document.getElementById('index').value == 0) {
 
 
 
-colorVerification()
-function colorVerification() {
-    let color = localStorage.getItem('color')
-    
-    if (color == null || color == undefined) {
-        localStorage.setItem('color', 'roxo');
-    }
-   
-    let other_colors = []
-    var hex = null
-    full_colors.forEach(item=>{
-        if (item.nome == color) {
-            hex = item.hex
-        }else{
-            other_colors.push(item)
-        }
-    })
-    if (color == 'select') {
-        hex = colorSec
-    }
-    document.body.style.setProperty('--color-secundary', hex);
-    if (document.getElementById('index').value == 0) {
-        document.querySelector(`[data-color=${other_colors[0].nome}]`).classList.remove('color-selected')
-        document.querySelector(`[data-color=${other_colors[1].nome}]`).classList.remove('color-selected')
-        document.querySelector(`[data-color=${other_colors[2].nome}]`).classList.remove('color-selected')
-        document.querySelector(`[data-color=${other_colors[3].nome}]`).classList.remove('color-selected')
-        document.querySelector(`[data-color=${color}]`).classList.toggle('color-selected')
-    }
-}
 
 
 document.querySelectorAll('.colors').forEach(item=>{
