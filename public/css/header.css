@@ -5,7 +5,7 @@ header{
     left: 0;
     height: 100%;
     position: sticky;
-    background-color: var(--secundary-black);
+    background-color: var(--secundary-color-header);
     
     display: flex;
     flex-direction: column;
@@ -20,14 +20,14 @@ img,br,a{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: var(--primary-black);
-    
+    background-color: var(--header-stack-color);
+    transition: 0.5s;
 }
 #logo img{
     width: 10em;
 }
 #logo #name{
-    color: var(--white);
+    color: var(--color-text-primary);
     margin-bottom: 0.5em;
     font-size: 1.8em;
     font-weight: 600;
@@ -83,19 +83,98 @@ footer{
 }
 #footer-containner{
     display: flex;
-    justify-content: flex-end;
     align-items: flex-end;
+    justify-content: center;
     height: 100%;
     width: 100%;
     
 }
 #lang_selected{
-    width: 3em;
-    margin-right: 1vw;
-    margin-bottom: 0.8vh;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 4em;
     cursor: pointer;
 }
+#lang-button{
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+#theme_button{
+    margin-right: 1em;
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
 
+    justify-content: center;
+    align-items: center;
+}
+#theme-description{
+    margin-bottom: 0.5em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #a1a1a1;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#checkbox:checked + .slider {
+    background-color: #1d1d1d;
+}
+
+#checkbox:focus + .slider {
+    box-shadow: 0 0 1px #1d1d1d;
+}
+
+#checkbox:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
 .hamburger {
     display: none;
     margin-left: 15px;
@@ -154,6 +233,7 @@ footer{
     min-width: 65vw;
     transition: 0.5s;
 }
+
 
 
 @media screen and (max-width: 300px) {

@@ -1,13 +1,4 @@
-:root{
-    --primary-black: #111111;
-    --secundary-black: #2F2F2F;
-    --main-background-black: #262626;
-    --text-gray-color-primary: #D7D7D7;
-    --text-gray-color-secundary: rgba(215, 215, 215, 45%);
-    --color-secundary: ;
-    --white: #fff;
-    --border-color: rgba(113, 113, 113, 50%);
-}
+
 *{
     margin: 0;
     padding: 0;
@@ -32,7 +23,7 @@ a{
 main{
     width: 100%;
     height: 100%;
-    background-color: var(--main-background-black);
+    background-color: var(--main-background);
 }
 #main-containner{
     display: flex;
@@ -57,13 +48,12 @@ main{
     border: 1px solid rgb(99, 99, 99);
     border-radius: 20px;
     height: 210px;
-    background-color: rgba(0, 0, 0, 0.37);
     max-width: 180px;
     min-width: 160px;
     margin-top: 10px;
     text-align: center;
     text-decoration: none;
-    color: var(--white);
+    color: var(--color-text-primary);
     cursor: pointer;
     overflow: hidden;
 }
@@ -138,7 +128,7 @@ main{
     font-family: 'Imprima', sans-serif;
     font-size: 1rem;
     text-decoration: underline;
-    color: var(--white);
+    color: var(--color-text-primary);
 }
 @media screen and (min-width: 760px) {
     body,html{

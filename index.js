@@ -58,39 +58,12 @@ app.post('/contact/menssage', (req,res)=>{
         lang: req.body.lang,
         color: req.body.color
     }
-    let full_colors = [
-        {
-            nome:'roxo',
-            hex: '#9055FF'
-        },
-        {
-            nome:'laranja',
-            hex:'#f77700'
-        },
-        {
-            nome:'vermelho',
-            hex:'#f70000'
-        },
-        {
-            nome:'rosa',
-            hex:'#f700ce'
-        },
-        {
-            nome:'azul',
-            hex:'#009cf7'
-        },
-        {
-            nome:'verde',
-            hex:'#15f700'
-        },
-    ]
-    let colorSelected = full_colors.find((item)=> {return item.nome == data.color})
     
     if (data.lang == 'pt-BR') {
         trasporter.sendMail({
             
             text: 'Olá sua mensagem já foi recebida logo entrarei em contato.',
-            html:`<b>Olá sua mensagem já foi recebida logo entrarei em contato.</b><br><br><a href="https://portifolio-fernando.onrender.com"><button style="padding: 10px; background-color: ${colorSelected.hex}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
+            html:`<b>Olá sua mensagem já foi recebida logo entrarei em contato.</b><br><br><a href="https://portifolio-fernando.onrender.com"><button style="padding: 10px; background-color: ${data.color}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
             subject: "Nova Mensagem de Fernando Júnio",
             from: "Fernando Júnio <fernando132sj@gmail.com>",
             to: [data.email,'fernando132sj@gmail.com']
@@ -98,7 +71,7 @@ app.post('/contact/menssage', (req,res)=>{
     }else if(data.lang == 'en-US'){
         trasporter.sendMail({
             text: 'Hello, your message has been received, I will contact you soon.',
-            html:`<b>Hello, your message has been received, I will contact you soon.</b><br><br><a href="https://portifolio-fernando.onrender.com"><button style="padding: 10px; background-color: ${colorSelected.hex}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
+            html:`<b>Hello, your message has been received, I will contact you soon.</b><br><br><a href="https://portifolio-fernando.onrender.com"><button style="padding: 10px; background-color: ${data.color}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
             subject: "New Message from Fernando Júnio",
             from: "Fernando Júnio <fernando132sj@gmail.com>",
             to: [data.email,'fernando132sj@gmail.com']

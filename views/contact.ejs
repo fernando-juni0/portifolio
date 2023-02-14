@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('./reusable/head.ejs')  %> 
     <link rel="stylesheet" href="../public/css/contact.css">
     <title>Portfólio / Fernando</title>
+    <%- include('./reusable/styleRoot.ejs') %> 
 </head>
 <body>
     <div id="containner">
@@ -27,16 +25,16 @@
                             <span id="FormTag">&lt;FORM&gt;</span><br>
                             <form action="/contact/menssage" id="form" method="post">
                                 <input type="text" name="color" id="color" hidden>
+                                <input type="text" name="lang" id="idioma" hidden>
                                 <div id="form-conteinner">
                                     <div id="form_inputs">
-                                        <input type="text" hidden id="idioma" name="lang" value="">
-                                        <input id="nome" name="nome" type="text" placeholder="Name">
-                                        <input id="email" name="email" type="text" placeholder="Email">
+                                        <input id="nome" name="nome" type="text" placeholder="Name" required>
+                                        <input id="email" name="email" type="text" placeholder="Email" required>
                                     </div>
                                     <div id="form-textarea">
-                                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" placeholder="Message" required></textarea>
                                     </div>
-                                    <button id="enviar" type="submit"></button>
+                                    <input type="submit" id="enviar">
                                 </div>
                             </form>
                             <span id="FormTagBottom">&lt;/FORM&gt;</span><br>
@@ -49,11 +47,6 @@
     </div>
     <%- include('./reusable/scripts.ejs') %> 
     
-    <script>
-        
-        document.getElementById('enviar').addEventListener('click',()=>{contact()})
-        document.getElementById('idioma').value = localStorage.getItem('lang')
-        document.getElementById('color').value = localStorage.getItem('color')
-    </script>
+    <script src="../public/js/contact.js"></script>
 </body>
 </html>

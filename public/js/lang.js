@@ -187,6 +187,7 @@ document.querySelectorAll('.lang-icons').forEach((item)=>{
         localStorage.setItem('lang', lang);
         if (lang == 'en-US') {
             langSelected.src = '../public/assets/US.svg'
+            
         }else if (lang == 'pt-BR') {
             langSelected.src = '../public/assets/BR.svg'
         }
