@@ -1,3 +1,8 @@
+if (localStorage.getItem('color') == null || localStorage.getItem('color') == undefined) {
+    localStorage.setItem('color', 'roxo');
+    location.reload()
+}
+
 var colorSec = localStorage.getItem('color-sec')
 
 
@@ -28,10 +33,9 @@ var full_colors = [
 colorVerification()
 function colorVerification() {
     let color = localStorage.getItem('color')
+
     
-    if (color == null || color == undefined) {
-        localStorage.setItem('color', 'roxo');
-    }
+    
    
     let other_colors = []
     var hex = null
@@ -45,6 +49,7 @@ function colorVerification() {
     if (color == 'select') {
         hex = colorSec
     }
+    
     document.body.style.setProperty('--color-secundary', hex);
     if (document.getElementById('index').value == 0) {
         document.querySelector(`[data-color=${other_colors[0].nome}]`).classList.remove('color-selected')
