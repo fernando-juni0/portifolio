@@ -7,10 +7,9 @@
     <%- include('./reusable/styleRoot.ejs') %> 
 </head>
 <body>
-    
+    <%- include('./reusable/reload.ejs') %> 
     <div id="containner">
         <%- include('./reusable/langContainner.ejs') %> 
-        <%- include('./reusable/reload.ejs') %> 
         <%- include('./reusable/header.ejs',{index:0})  %> 
         <main>
             <div id="main-containner">
@@ -42,7 +41,7 @@
                     <div id="secundary-color-picker">
                         <span id="picker-text"></span>
                         <div id="options-color">
-                            <div data-color="select" class="colors" id="color-sec" style="background-color: transparent;"></div>
+                            <div data-color="select" class="colors" id="color-sec"></div>
                             <div data-color="roxo" class="colors"></div>
                             <div data-color="vermelho" class="colors" style="background-color: #f70000;"></div>
                             <div data-color="rosa" class="colors" style="background-color: #f700ce;"></div>

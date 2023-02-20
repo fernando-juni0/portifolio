@@ -1,6 +1,9 @@
 document.getElementById('containner').innerHTML += `<div style="position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 100; " id="notify-containner"></div>` 
 
 
+
+
+
 const lang = {
     'pt-BR':{
         mensage: "Este site ainda não foi concluído então pode apresentar alguns problemas técnicos.",

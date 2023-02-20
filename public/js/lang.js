@@ -80,9 +80,14 @@ function langVerification(){
     const idioma = localStorage.getItem('lang')
     if (idioma == null || idioma == undefined) {
         let navLang = window.navigator.language
-        localStorage.setItem('lang', navLang);
+        if (navLang == null || navLang == undefined || navLang == "") {
+            localStorage.setItem('lang', "en-US");
+        }else{
+            localStorage.setItem('lang', navLang);
+        }
     }
     if (idioma == 'en-US') {
+        document.querySelector('html').setAttribute('lang', 'en-US')
         langSelected.src = '../public/assets/US.svg'
         if (index == 0) {
             let textIndex = textLangs["en-US"].index
@@ -125,7 +130,7 @@ function langVerification(){
             return
         }
     }else if (idioma == 'pt-BR') {
-        
+        document.querySelector('html').setAttribute('lang', 'pt-BR')
         langSelected.src = '../public/assets/BR.svg'
         if (index == 0) {
             let textIndex = textLangs["pt-BR"].index
@@ -133,6 +138,7 @@ function langVerification(){
             document.querySelector('#main-title').innerHTML = textIndex["main-title"]
             document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
             document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
+            return
         }
         if (index == 1) {
             let textabout = textLangs["pt-BR"].about

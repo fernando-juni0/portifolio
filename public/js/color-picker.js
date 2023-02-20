@@ -9,7 +9,7 @@ var colorSec = localStorage.getItem('color-sec')
 var full_colors = [
     {
         nome:'select',
-        hex:null
+        hex: '#111'
     },
     {
         nome:'roxo',
@@ -36,7 +36,7 @@ function colorVerification() {
 
     
     
-   
+    
     let other_colors = []
     var hex = null
     full_colors.forEach(item=>{
@@ -75,17 +75,17 @@ if (document.getElementById('index').value == 0) {
             document.body.style.setProperty('--color-secundary', inputColor.value);
         }else{
             localStorage.setItem('color', "select")
-            colorVerification()
         }
-        
+        location.reload()
     })
     
 
     if (colorSec == null || colorSec == undefined) {
-        
+        document.getElementById('color-sec').style.display = 'none'
     }else{
         full_colors[0].hex = colorSec
         document.getElementById('color-sec').style.backgroundColor = colorSec
+        document.getElementById('color-sec').style.display = 'block'
     }
 }
 

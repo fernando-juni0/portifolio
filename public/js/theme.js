@@ -2,7 +2,10 @@ var check = document.getElementById('checkbox')
 themeVerificarion()
 function themeVerificarion(){
     let themeLocal = localStorage.getItem('theme')
-
+    if (themeLocal == null || themeLocal == undefined) {
+        localStorage.setItem('theme', 'dark')
+        location.reload()
+    }
     if (themeLocal == 'dark') {
         document.body.setAttribute('data-theme', themeLocal);
         document.getElementById('theme-description').innerText = "Dark Mode"
