@@ -107,6 +107,10 @@ app.get('/work',(req, res)=>{
     res.render('work')
 })
 
+app.get('/curriculo',(req, res)=>{
+    res.render('curriculo')
+})
+
 app.get('/contact',(req, res)=>{
     res.render('contact')
 })

@@ -1,8 +1,13 @@
-document.getElementById('containner').innerHTML += `<div style="position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 100; " id="notify-containner"></div>` 
+document.getElementById('containner').innerHTML += `<div id="notify-containner"></div>` 
 
 
 
-
+document.getElementById('containner').innerHTML += `
+<style>
+    #notify-containner{ position: absolute; width: 100vw; left: 50%; transform: translate(-50%, -50%); z-index: 100; }
+    #notificacao-mensage{ position: absolute; width: 80vw; text-align: center; top: -50px; left: 50%; transform: translate(-50%, -50%); transition: 1s; z-index: 100;  font-size: 1.2em;  font-weight: bold; font-family: 'Inter', sans-serif; }
+</style>
+`
 
 const lang = {
     'pt-BR':{
@@ -25,17 +30,11 @@ document.querySelectorAll('.lang-icons').forEach((item)=>{
 
     })
 })
-
-
-if (location.pathname == '/') {
-    mensage()
-}
-function mensage() {
-    document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="position: absolute; top: -50px; left: 50%; transform: translate(-50%, -50%); transition: 1s; z-index: 100; white-space: nowrap; font-size: 1.2em; color: #f18c09; text-shadow: 0px 0px 25px #f18c09; font-weight: bold; font-family: 'Inter', sans-serif;">${idioma == "pt-BR" ? lang["pt-BR"].mensage : lang["en-US"].mensage}</div>`
-    
+function time() {
     setTimeout(()=>{     
         document.getElementById('notificacao-mensage').style.top = "30px"
-    }, 0100);
+
+    }, 0200);
     setTimeout(()=>{     
         document.getElementById('notificacao-mensage').style.top ="-50px"
         setTimeout(()=>{     
@@ -45,34 +44,31 @@ function mensage() {
     }, 5000);
 }
 
-function saveNot() {
-    document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-save" style="position: absolute; top: -50px; left: 50%; transform: translate(-50%, -50%); transition: 1s; z-index: 100; white-space: nowrap; font-size: 1.2em; color: #00ff00; text-shadow: 0px 0px 25px #00ff00; font-weight: bold; font-family: 'Inter', sans-serif;">${idioma == "pt-BR" ? lang["pt-BR"].save : lang["en-US"].save }</div>`
+if (location.pathname == '/') {
+    mensage()
+}
+function mensage() {
+    document.getElementById('notify-containner').innerHTML = ""
     
     setTimeout(()=>{     
-        document.getElementById('notificacao-save').style.top = "30px"
-
+        document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="color: #f18c09; text-shadow: 0px 0px 25px #f18c09;">${idioma == "pt-BR" ? lang["pt-BR"].mensage : lang["en-US"].mensage}</div>`
     }, 0100);
+    time() 
+}
+
+function saveNot() {
+    document.getElementById('notify-containner').innerHTML = ""
     setTimeout(()=>{     
-        document.getElementById('notificacao-save').style.top ="-50px"
-        setTimeout(()=>{     
-            document.getElementById('notify-containner').innerHTML =""
+        document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="color: #00ff00; text-shadow: 0px 0px 25px #00ff00;">${idioma == "pt-BR" ? lang["pt-BR"].save : lang["en-US"].save }</div>`
+    }, 0100);
     
-        }, 1000);
-    }, 5000);
+    time() 
 }
 function contact() {
-    document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-contact" style="position: absolute; top: -50px; left: 50%; transform: translate(-50%, -50%); transition: 1s; z-index: 100; white-space: nowrap; font-size: 1.2em; color: #00ff00; text-shadow: 0px 0px 25px #00ff00; font-weight: bold; font-family: 'Inter', sans-serif;">${idioma == "pt-BR" ? lang["pt-BR"].contact : lang["en-US"].contact }</div>`
-    
+    document.getElementById('notify-containner').innerHTML = ""
     setTimeout(()=>{     
-        document.getElementById('notificacao-contact').style.top = "30px"
-
+        document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="color: #00ff00; text-shadow: 0px 0px 25px #00ff00;">${idioma == "pt-BR" ? lang["pt-BR"].contact : lang["en-US"].contact }</div>`
     }, 0100);
-    setTimeout(()=>{     
-        document.getElementById('notificacao-contact').style.top ="-50px"
-        setTimeout(()=>{     
-            document.getElementById('notify-containner').innerHTML =""
-    
-        }, 1000);
-    }, 5000);
+    time() 
 }
 

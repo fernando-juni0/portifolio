@@ -121,7 +121,7 @@ function langVerification(){
             document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
             return
         }
-        if (index == 4) {
+        if (index == 5) {
             let textcontact = textLangs["en-US"].contact
             document.querySelector('#main-title').innerHTML = textcontact["main-title"]
             document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
@@ -164,7 +164,7 @@ function langVerification(){
             document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
             return
         }
-        if (index == 4) {
+        if (index == 5) {
             let textcontact = textLangs["pt-BR"].contact
             document.querySelector('#main-title').innerHTML = textcontact["main-title"]
             document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
