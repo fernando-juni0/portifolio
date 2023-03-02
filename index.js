@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session')
 const path = require('path');
 const nodemailer = require('nodemailer')
+const ejs = require('ejs')
 
 
 //------------Configs--------------
@@ -20,7 +21,7 @@ app.use(session({
 }))
 
 
-const SMTP_CONFIG = require('./config/smtp')
+const SMTP_CONFIG = require('./config/smtp');
 const trasporter = nodemailer.createTransport({
     host: SMTP_CONFIG.host,
     port: SMTP_CONFIG.port,
@@ -88,11 +89,23 @@ app.post('/contact/menssage', (req,res)=>{
     res.redirect('/contact')
 })  
 
+app.get('/curriculo/generate', async (req,res)=>{
+    var page = require('webpage').create();
+    page.open('http://stackoverflow.com/', function() {
+      page.render('stackoverflow.png');
+      phantom.exit();
+    });
+    
+
+})
+
+
 
 //-----------------GET--------------------
 
 app.get('/',(req,res)=>{
     res.render('index')
+
 })
 
 app.get('/about',(req, res)=>{
@@ -113,6 +126,11 @@ app.get('/curriculo',(req, res)=>{
 
 app.get('/contact',(req, res)=>{
     res.render('contact')
+})
+
+
+app.get('/curriculo/modelo',(req,res)=>{
+    res.render('modelo-curriculo',{color: '#9055FF', lang:'pt-BR'})
 })
 
 

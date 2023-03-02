@@ -29,9 +29,84 @@ main{
     background-color: var(--main-background);
     transition: 0.4s;
 }
+#main-containner{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-around;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+}
+#main-title{
+    color: var(--color-secundary);
+    font-family: 'Imprima', sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+#resumo{
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-family: 'Imprima', sans-serif;
+    color: var(--text-gray-color-primary);
+}
+#left-curriculo{
+    width: 35%;
+    height: 80%;
+    text-align: center;
+    
+}
+#download-containner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+#texts{
+    display: flex;
+    flex-direction: column;
+}
+#preview-render{
+    width: 35%;
+    height: 85%;
+    border: 2px solid var(--border-color);
+    padding: 5px;
+    border-radius: 8px;
+}
+#download-button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--color-secundary);
+    background-color: transparent;
+    padding: 0.6em;
+    font-size: 1.5em;
+    color: var(--color-secundary);
+    margin-top: 1vh;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#download-button:hover{
+    text-shadow: 0px 0px 13px var(--color-secundary);
+    box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 1000px) {
     body,html{
         height: 100%;
+        overflow: hidden;
     }
 } 

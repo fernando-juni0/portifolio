@@ -14,7 +14,33 @@
         <%- include('./reusable/header.ejs',{index:4})  %> 
         <main>
             <div id="main-containner">
-                
+                <div id="left-curriculo">
+                    <div id="texts">
+                        <span id="main-title">Meu Curriculo! &#x2661;</span>
+                        <span id="resumo">Aqui voce pode ver o preview do meu curriculo e caso deseje tambem pode ser feito o download do mesmo!</span>
+                    </div>
+                    <div id="download-containner">
+                    <!--<div id="options-format">
+                            <span>Selecione o formato</span>
+                            <div id="options">
+                                <ul>
+                                    <li>JPG <span>4.31</span></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <div id="buttons">
+                            <form action="/curriculo/generate/pdf" method="post">
+                                <input type="text" id="color" name="color" hidden>
+                                <input type="text" id="idioma" name="idioma" hidden>
+                                <button type="submit" id="download-button">Fazer Download</button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="preview-render">
+                    <%- include('./modelo-curriculo',{color: null, idioma: null}) %>
+                </div>
             </div>
         </main>
     </div>
