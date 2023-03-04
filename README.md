@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  <a href="https://portifolio.netlify.app">Demo</a>
+  # <a href="https://portifolio-fernando.onrender.com">Site</a>
 </div>
 
 <h1 align="center">Portifolio</h1>
@@ -24,13 +24,7 @@
   <img alt="Github stars" src="https://img.shields.io/github/stars/fernando-juni0/portifolio?color=56BEB8" /> 
 </p>
 
-## 🔖 Status ##
 
-<h4 align="center"> 
-	🚧  Portifolio 🚀 Under construction...  🚧
-</h4> 
-
-<hr>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -41,6 +35,15 @@
   <a href="https://github.com/fernando-juni0" target="_blank">Author</a>
 </p>
 
+<br>
+
+# <h1 align="center">🔖 Status</h1> 
+
+<h4 align="center"> 
+  🚧  Portifolio Under construction...  🚧
+</h4> 
+
+<hr>
 <br>
 
 ## :dart: About ##
@@ -70,7 +73,7 @@ $ git clone https://github.com/fernando-juni0/portifolio
 $ cd portifolio
 
 # Install dependencies
-$ npm
+$ npm install
 
 # Run the project
 $ npm start
