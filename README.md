@@ -38,8 +38,7 @@
 <br>
 <hr>
 
-<h2 align="center">🔖 Status</h2> 
-
+<h1 align="center">🔖 Status</h1>
 <h4 align="center">🚧  Portifolio Under construction...  🚧</h4> 
 
 <hr>
