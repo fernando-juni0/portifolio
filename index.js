@@ -15,7 +15,7 @@ require('dotenv').config()
 
 
 app.use(session({
-    secret: process.env.SECRET, 
+    secret: process.env.SECRET || '35515153135gses', 
     resave: false, 
     saveUninitialized: true,
 }))

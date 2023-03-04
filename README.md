@@ -34,7 +34,6 @@
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
@@ -46,23 +45,16 @@
 
 ## :dart: About ##
 
-Describe your project
-
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+Hello, this application is a portfolio developed 100% by me (Fernando Júnio), the application aims to show a little of my work, in the application it is possible to find several features in addition to delivering a vision of my person, I hope you like it ♡.
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
 - [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [EJS](https://ejs.co)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 ## :white_check_mark: Requirements ##
 
@@ -83,7 +75,9 @@ $ npm
 # Run the project
 $ npm start
 
-# The server will initialize in the <http://localhost>
+# The server will initialize in the <http://localhost:80>
+
+#It is possible to change the opening port of the server by creating a .ENV file and adding the following line: PORT='Your Port'
 ```
 
 ## :memo: License ##
