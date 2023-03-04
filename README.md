@@ -16,12 +16,6 @@
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/fernando-juni0/portifolio?color=56BEB8">
 
   <img alt="License" src="https://img.shields.io/github/license/fernando-juni0/portifolio?color=56BEB8">
-
-  <img alt="Github issues" src="https://img.shields.io/github/issues/fernando-juni0/portifolio?color=56BEB8" /> 
-
-  <img alt="Github forks" src="https://img.shields.io/github/forks/fernando-juni0/portifolio?color=56BEB8" /> 
-
-  <img alt="Github stars" src="https://img.shields.io/github/stars/fernando-juni0/portifolio?color=56BEB8" /> 
 </p>
 
 
