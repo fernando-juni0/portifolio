@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  # <a href="https://portifolio-fernando.onrender.com">Site</a>
+  # <a href="https://portifolio-fernando.onrender.com" target="_blank">Site</a>
 </div>
 
 <h1 align="center">Portifolio</h1>
@@ -36,8 +36,9 @@
 </p>
 
 <br>
+<hr>
 
-<h1 align="center">🔖 Status</h1> 
+<h2 align="center">🔖 Status</h2> 
 
 <h4 align="center">🚧  Portifolio Under construction...  🚧</h4> 
 
