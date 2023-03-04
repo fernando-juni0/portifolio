@@ -1,24 +1,28 @@
 {
   "name": "portifolio",
   "version": "1.0.0",
-  "description": "Codigo fonte do meu Portifolio ",
+  "description": "Hello, this application is a portfolio developed 100% by me (Fernando Júnio), the application aims to show a little of my work, in the application it is possible to find several features in addition to delivering a vision of my person, I hope you like it ♡.",
+  "author": "Fernando Júnio",
+  "license": "ISC",
   "main": "index.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev2": "node --watch index.js",
     "dev": "nodemon index.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fernando-juni0/portifolio.git"
   },
-  "author": "Fernando :)",
-  "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/fernando-juni0/portifolio/issues"
   },
+
   "homepage": "https://github.com/fernando-juni0/portifolio#readme",
+
   "dependencies": {
     "body-parser": "^1.20.0",
     "child_process": "^1.0.2",

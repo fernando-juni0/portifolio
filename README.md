@@ -1,9 +1,9 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Portifolio" />
+  <img src="./.github/readmeBanner.png" alt="Portifolio" />
 
   &#xa0;
 
-  <!-- <a href="https://portifolio.netlify.app">Demo</a> -->
+  <a href="https://portifolio.netlify.app">Demo</a>
 </div>
 
 <h1 align="center">Portifolio</h1>
@@ -15,22 +15,22 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/fernando-juni0/portifolio?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/portifolio?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/fernando-juni0/portifolio?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/portifolio?color=56BEB8" /> -->
+  <img alt="Github issues" src="https://img.shields.io/github/issues/fernando-juni0/portifolio?color=56BEB8" /> 
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/portifolio?color=56BEB8" /> -->
+  <img alt="Github forks" src="https://img.shields.io/github/forks/fernando-juni0/portifolio?color=56BEB8" /> 
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/portifolio?color=56BEB8" /> -->
+  <img alt="Github stars" src="https://img.shields.io/github/stars/fernando-juni0/portifolio?color=56BEB8" /> 
 </p>
 
-<!-- Status -->
+## 🔖 Status ##
 
-<!-- <h4 align="center"> 
+<h4 align="center"> 
 	🚧  Portifolio 🚀 Under construction...  🚧
 </h4> 
 
-<hr> -->
+<hr>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
