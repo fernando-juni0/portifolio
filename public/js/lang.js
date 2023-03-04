@@ -1,6 +1,7 @@
 var open_lang_popup = false
 var langSelected = document.getElementById('lang_selected')
-var index = document.getElementById('index').value
+var index = Number(document.getElementById('index').value)
+
 
 
 var textLangs = {
@@ -78,99 +79,113 @@ var textLangs = {
 langVerification()
 function langVerification(){
     const idioma = localStorage.getItem('lang')
-    if (idioma == null || idioma == undefined) {
-        let navLang = window.navigator.language
-        if (navLang == null || navLang == undefined || navLang == "") {
-            localStorage.setItem('lang', "en-US");
-        }else{
-            localStorage.setItem('lang', navLang);
-        }
-    }
-    if (idioma == 'en-US') {
-        document.querySelector('html').setAttribute('lang', 'en-US')
-        langSelected.src = '../public/assets/US.svg'
-        if (index == 0) {
-            let textIndex = textLangs["en-US"].index
-            document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
-            document.querySelector('#main-title').innerHTML = textIndex["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
-            document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
-            return
-        }
-        if (index == 1) {
-            let textabout = textLangs["en-US"].about
-            document.querySelector('#main-title').innerHTML = textabout["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textabout["text-paragrafo"]
-            return
-        }
-        if (index == 2) {
-            let textskills = textLangs["en-US"].skills
-            document.querySelector('#main-title').innerHTML = textskills["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textskills["text-paragrafo"]
-            document.querySelector('#work-resume').innerHTML = textskills["work-resume"]
-            document.querySelector('#work-title').innerHTML = textskills["work-title"]
-            return
-        }
-        if (index == 3) {
-            let textwork = textLangs["en-US"].work
-            document.querySelector('#twitter-descricao').innerHTML = textwork["twitter-descricao"]
-            document.querySelector('#infoeduc-descricao').innerHTML = textwork["infoeduc-descricao"]
-            document.querySelector('#spotify-descricao').innerHTML = textwork["spotify-descricao"]
-            document.querySelector('#work-title').innerHTML = textwork["work-title"]
-            document.querySelector('#work-subTitle').innerHTML = textwork["work-subTitle"]
-            document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
-            return
-        }
-        if (index == 5) {
-            let textcontact = textLangs["en-US"].contact
-            document.querySelector('#main-title').innerHTML = textcontact["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
-        
-            document.querySelector('#enviar').innerHTML = textcontact.enviar
-            return
-        }
-    }else if (idioma == 'pt-BR') {
-        document.querySelector('html').setAttribute('lang', 'pt-BR')
-        langSelected.src = '../public/assets/BR.svg'
-        if (index == 0) {
-            let textIndex = textLangs["pt-BR"].index
-            document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
-            document.querySelector('#main-title').innerHTML = textIndex["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
-            document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
-            return
-        }
-        if (index == 1) {
-            let textabout = textLangs["pt-BR"].about
-            document.querySelector('#main-title').innerHTML = textabout["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textabout["text-paragrafo"]
-            return
-        }
-        if (index == 2) {
-            let textskills = textLangs["pt-BR"].skills
-            document.querySelector('#main-title').innerHTML = textskills["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textskills["text-paragrafo"]
-            document.querySelector('#work-resume').innerHTML = textskills["work-resume"]
-            document.querySelector('#work-title').innerHTML = textskills["work-title"]
-            return
-        }
-        if (index == 3) {
-            let textwork = textLangs["pt-BR"].work
-            document.querySelector('#twitter-descricao').innerHTML = textwork["twitter-descricao"]
-            document.querySelector('#infoeduc-descricao').innerHTML = textwork["infoeduc-descricao"]
-            document.querySelector('#spotify-descricao').innerHTML = textwork["spotify-descricao"]
-            document.querySelector('#work-title').innerHTML = textwork["work-title"]
-            document.querySelector('#work-subTitle').innerHTML = textwork["work-subTitle"]
-            document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
-            return
-        }
-        if (index == 5) {
-            let textcontact = textLangs["pt-BR"].contact
-            document.querySelector('#main-title').innerHTML = textcontact["main-title"]
-            document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
-            document.querySelector('#enviar').innerHTML = textcontact.enviar
-            return
-        }
+    switch (idioma) {
+        case undefined:
+        case null:
+            let navLang = window.navigator.language
+            if (navLang == null || navLang == undefined || navLang == "") {
+                localStorage.setItem('lang', "en-US");
+            }else{
+                localStorage.setItem('lang', navLang);
+            }
+            break;
+        case 'en-US':
+            document.querySelector('html').setAttribute('lang', 'en-US')
+            langSelected.src = '../public/assets/svgs/US.svg'
+            switch (index) {
+                case 0:
+                    let textIndex = textLangs["en-US"].index
+                    document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
+                    document.querySelector('#main-title').innerHTML = textIndex["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
+                    document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
+                    break;
+
+                case 1:
+                    let textabout = textLangs["en-US"].about
+                    document.querySelector('#main-title').innerHTML = textabout["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textabout["text-paragrafo"]
+                    break;
+
+                case 2:
+                    let textskills = textLangs["en-US"].skills
+                    document.querySelector('#main-title').innerHTML = textskills["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textskills["text-paragrafo"]
+                    document.querySelector('#work-resume').innerHTML = textskills["work-resume"]
+                    document.querySelector('#work-title').innerHTML = textskills["work-title"]
+                    break;
+
+                case 3:
+                    let textwork = textLangs["en-US"].work
+                    document.querySelector('#twitter-descricao').innerHTML = textwork["twitter-descricao"]
+                    document.querySelector('#infoeduc-descricao').innerHTML = textwork["infoeduc-descricao"]
+                    document.querySelector('#spotify-descricao').innerHTML = textwork["spotify-descricao"]
+                    document.querySelector('#work-title').innerHTML = textwork["work-title"]
+                    document.querySelector('#work-subTitle').innerHTML = textwork["work-subTitle"]
+                    document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
+                    break;
+
+                case 4:
+                    
+                    break;
+
+                case 5:
+                    let textcontact = textLangs["en-US"].contact
+                    document.querySelector('#main-title').innerHTML = textcontact["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
+                    document.querySelector('#enviar').innerHTML = textcontact.enviar
+                    break;
+            }
+            break;
+        case 'pt-BR':
+            document.querySelector('html').setAttribute('lang', 'pt-BR')
+            langSelected.src = '../public/assets/svgs/BR.svg'
+            switch (index) {
+                case 0:
+                    let textIndex = textLangs["pt-BR"].index
+                    document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
+                    document.querySelector('#main-title').innerHTML = textIndex["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
+                    document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
+                    break;
+
+                case 1:
+                    let textabout = textLangs["pt-BR"].about
+                    document.querySelector('#main-title').innerHTML = textabout["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textabout["text-paragrafo"]
+                    break;
+
+                case 2:
+                    let textskills = textLangs["pt-BR"].skills
+                    document.querySelector('#main-title').innerHTML = textskills["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textskills["text-paragrafo"]
+                    document.querySelector('#work-resume').innerHTML = textskills["work-resume"]
+                    document.querySelector('#work-title').innerHTML = textskills["work-title"]
+                    break;
+
+                case 3:
+                    let textwork = textLangs["pt-BR"].work
+                    document.querySelector('#twitter-descricao').innerHTML = textwork["twitter-descricao"]
+                    document.querySelector('#infoeduc-descricao').innerHTML = textwork["infoeduc-descricao"]
+                    document.querySelector('#spotify-descricao').innerHTML = textwork["spotify-descricao"]
+                    document.querySelector('#work-title').innerHTML = textwork["work-title"]
+                    document.querySelector('#work-subTitle').innerHTML = textwork["work-subTitle"]
+                    document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
+                    break;
+
+                case 4:
+                    
+                    break;
+
+                case 5:
+                    let textcontact = textLangs["pt-BR"].contact
+                    document.querySelector('#main-title').innerHTML = textcontact["main-title"]
+                    document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
+                    document.querySelector('#enviar').innerHTML = textcontact.enviar
+                    break;
+            }
+            break;
+
     }
 }
 document.getElementById('lang-containner').addEventListener('click',()=>{
@@ -192,10 +207,10 @@ document.querySelectorAll('.lang-icons').forEach((item)=>{
         let lang = item.getAttribute('data-lang')
         localStorage.setItem('lang', lang);
         if (lang == 'en-US') {
-            langSelected.src = '../public/assets/US.svg'
+            langSelected.src = '../public/assets/svgs/US.svg'
             
         }else if (lang == 'pt-BR') {
-            langSelected.src = '../public/assets/BR.svg'
+            langSelected.src = '../public/assets/svgs/BR.svg'
         }
         open_lang_popup = false
         document.getElementById('lang-containner').style.display = 'none'

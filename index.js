@@ -89,17 +89,6 @@ app.post('/contact/menssage', (req,res)=>{
     res.redirect('/contact')
 })  
 
-app.get('/curriculo/generate', async (req,res)=>{
-    var page = require('webpage').create();
-    page.open('http://stackoverflow.com/', function() {
-      page.render('stackoverflow.png');
-      phantom.exit();
-    });
-    
-
-})
-
-
 
 //-----------------GET--------------------
 
@@ -126,6 +115,10 @@ app.get('/curriculo',(req, res)=>{
 
 app.get('/contact',(req, res)=>{
     res.render('contact')
+})
+
+app.get('/curriculo/certificados',(req,res)=>{
+    res.render('certificados')
 })
 
 

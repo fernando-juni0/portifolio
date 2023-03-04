@@ -1,0 +1,53 @@
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-background);
+    transition: 0.4s;
+}
+#main-containner{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+}
+#top-text{
+    width: 60%;
+    text-align: center;
+    margin-top: 2em;
+    height: fit-content;
+}
+#top-text h1{
+    font-family: 'Imprima', sans-serif;
+    font-size: 3em;
+    color: var(--color-secundary);
+    font-weight: bold;
+    margin-bottom: 0.8em;
+}
+#top-text span{
+    
+    font-family: 'Imprima', sans-serif;
+    font-size: 1.2em;
+    color: var(--text-gray-color-primary);
+}
+#certificados{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#cert-row{
+
+}
+
+
+@media screen and (min-width: 1000px) {
+    body,html{
+        height: 100%;
+        overflow: hidden;
+    }
+} 
