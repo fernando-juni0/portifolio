@@ -1,7 +1,6 @@
 main{
     display: flex;
     width: 100%;
-    height: 100%;
     background-color: var(--main-background);
     transition: 0.4s;
 }
@@ -30,13 +29,10 @@ main{
     width: 35%;
     height: 80%;
     text-align: center;
-    
-}
-#download-containner{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column ;
     align-items: center;
-    height: inherit;
 }
 #texts{
     display: flex;
@@ -45,13 +41,22 @@ main{
 #preview-render{
     width: 35%;
     height: 85%;
+    min-height: 452px;
+
+    min-width: 350px;
     border: 2px solid var(--border-color);
     padding: 5px;
     border-radius: 8px;
 }
-#download-button{
+#preview-render img{
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+}
+.button-curriculo{
     background-color: transparent;
     border: none;
+    max-width: 70%;
     outline: none;
     border: 1px solid var(--color-secundary);
     background-color: transparent;
@@ -64,30 +69,7 @@ main{
     font-family: "inter", sans-serif;
     border-radius: 6px;
 }
-#download-button:hover{
-    text-shadow: 0px 0px 13px var(--color-secundary);
-    box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
-    transition: 0.5s;
-}
-#certificados{
-
-}
-#certificados a{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    border: 1px solid var(--color-secundary);
-    background-color: transparent;
-    padding: 0.6em;
-    font-size: 1.5em;
-    color: var(--color-secundary);
-    margin-top: 1vh;
-    cursor: pointer;
-    transition: 0.5s;
-    font-family: "inter", sans-serif;
-    border-radius: 6px;
-}
-#certificados a:hover{
+.button-curriculo:hover{
     text-shadow: 0px 0px 13px var(--color-secundary);
     box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
     transition: 0.5s;
@@ -95,6 +77,8 @@ main{
 
 #svgCurriculo{
     margin-left: 0.8em;
+    position: relative;
+    top: 3px;
 }
 #svgCurriculo path{
     fill: var(--color-secundary);
@@ -104,8 +88,18 @@ main{
 
 
 
-
-
+@media screen and (max-width: 1200px) {
+    #main-containner{
+        flex-direction: column;
+    }
+    #left-curriculo{
+        width: 100%;
+        height: 100%;
+    }
+    #preview-render{
+        margin-top: 5em;
+    }
+} 
 
 
 @media screen and (min-width: 1000px) {
@@ -113,4 +107,5 @@ main{
         height: 100%;
         overflow: hidden;
     }
+
 } 

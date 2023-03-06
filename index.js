@@ -109,23 +109,17 @@ app.get('/work',(req, res)=>{
     res.render('work')
 })
 
-app.get('/curriculo',(req, res)=>{
-    res.render('curriculo')
-})
-
 app.get('/contact',(req, res)=>{
     res.render('contact')
+})
+
+app.get('/curriculo',(req, res)=>{
+    res.render('curriculo')
 })
 
 app.get('/curriculo/certificados',(req,res)=>{
     res.render('certificados')
 })
-
-
-app.get('/curriculo/modelo',(req,res)=>{
-    res.render('modelo-curriculo',{color: '#9055FF', lang:'pt-BR'})
-})
-
 
 
 
