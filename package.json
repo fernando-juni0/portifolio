@@ -5,25 +5,21 @@
   "author": "Fernando Júnio",
   "license": "ISC",
   "main": "index.js",
-
   "scripts": {
     "start": "node index.js",
     "dev2": "node --watch index.js",
     "dev": "nodemon index.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fernando-juni0/portifolio.git"
   },
-
   "bugs": {
     "url": "https://github.com/fernando-juni0/portifolio/issues"
   },
-
   "homepage": "https://github.com/fernando-juni0/portifolio#readme",
-
   "dependencies": {
+    "@vercel/node": "^2.9.10",
     "body-parser": "^1.20.0",
     "child_process": "^1.0.2",
     "cookie-parser": "^1.4.6",
