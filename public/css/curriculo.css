@@ -91,6 +91,7 @@ main{
 @media screen and (max-width: 1200px) {
     #main-containner{
         flex-direction: column;
+        margin-top: 0px;
     }
     #left-curriculo{
         width: 100%;
