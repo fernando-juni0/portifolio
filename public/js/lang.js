@@ -34,6 +34,20 @@ var textLangs = {
             "work-title":"Below are some of my work or personal projects.",
             "work-subTitle":"You can hover over cards to learn more or click on them to be redirected either to the repository or to a webpage.",
             "portifolio-descricao":"By clicking you can see the source code of the portfolio."
+        },
+        curriculo:{
+            'main-title':"My Curriculum! &#x2661;",
+            'resumo':"Here you can see the preview of my resume and if you wish you can also download it!",
+            'certificado-button':"Check the Certificates",
+            'download-button':"Download Curriculum"
+        },
+        certificados:{
+            'main-title':"My Certificates📜",
+            'resumo':"Below you can see all my course certificates I was able to complete, if you feel like it and you can download them in PDF format by clicking the button!",
+            "certificado-presencial":"Classroom Course Certificates",
+            'prepara-title':"Certificate Prepara Cursos",
+            'certificado-online':"Online Course Certificates",
+            "voltar-curriculo": "Back to curriculum"
         }
     },
     'pt-BR':{
@@ -66,6 +80,20 @@ var textLangs = {
             "work-title":"Abaixo são alguns dos meus trabalhos ou projetos pessoais.",
             "work-subTitle":"Você pode passar o mouse sobre os cards para saber mais ou clicar nos mesmos para ser redirecionado ou para o repositório ou para uma página web.",
             "portifolio-descricao":"Clicando você pode ver o código fonte do portfólio"
+        },
+        curriculo:{
+            'main-title':"Meu Curriculo! &#x2661;",
+            'resumo':"Aqui voce pode ver o preview do meu curriculo e caso deseje tambem pode ser feito o download do mesmo!",
+            'certificado-button':"Conferir os Certificados",
+            'download-button':"Baixar Currículo"
+        },
+        certificados:{
+            'main-title':"Meus Certificados📜",
+            'resumo':"Abaixo é possível ver todos os meus certificados de cursos que pude concluir, caso tenha vontade e possível baixá-los no formato PDF ao clicar no botão!",
+            "certificado-presencial":"Certificados de Cursos Presenciais",
+            'prepara-title':"Certificado Prepara Cursos",
+            'certificado-online':"Certificados de Cursos Online",
+            "voltar-curriculo": "Voltar para o curriculo"
         }
     }
 }
@@ -126,7 +154,11 @@ function langVerification(){
                     break;
 
                 case 4:
-                    
+                    let textcurriculo = textLangs["en-US"].curriculo
+                    document.querySelector('#main-title').innerHTML = textcurriculo["main-title"]
+                    document.querySelector('#resumo').innerHTML = textcurriculo["resumo"]
+                    document.querySelector('#certificado-button').innerHTML = textcurriculo["certificado-button"]
+                    document.querySelector('#download-button').innerHTML = textcurriculo["download-button"]
                     break;
 
                 case 5:
@@ -134,6 +166,15 @@ function langVerification(){
                     document.querySelector('#main-title').innerHTML = textcontact["main-title"]
                     document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
                     document.querySelector('#enviar').innerHTML = textcontact.enviar
+                    break;
+                case 6:
+                    let textcertificado = textLangs["en-US"].certificados
+                    document.querySelector('#main-title').innerHTML = textcertificado["main-title"]
+                    document.querySelector('#resumo').innerHTML = textcertificado["resumo"]
+                    document.querySelector('#certificado-presencial').innerHTML = textcertificado["certificado-presencial"]
+                    document.querySelector('#prepara-title').innerHTML = textcertificado["prepara-title"]
+                    document.querySelector('#certificado-online').innerHTML = textcertificado["certificado-online"]
+                    document.querySelector('#voltar-curriculo').innerHTML = textcertificado["voltar-curriculo"]
                     break;
             }
             break;
@@ -174,7 +215,11 @@ function langVerification(){
                     break;
 
                 case 4:
-                    
+                    let textcurriculo = textLangs["pt-BR"].curriculo
+                    document.querySelector('#main-title').innerHTML = textcurriculo["main-title"]
+                    document.querySelector('#resumo').innerHTML = textcurriculo["resumo"]
+                    document.querySelector('#certificado-button').innerHTML = textcurriculo["certificado-button"]
+                    document.querySelector('#download-button').innerHTML = textcurriculo["download-button"]
                     break;
 
                 case 5:
@@ -182,6 +227,15 @@ function langVerification(){
                     document.querySelector('#main-title').innerHTML = textcontact["main-title"]
                     document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
                     document.querySelector('#enviar').innerHTML = textcontact.enviar
+                    break;
+                case 6:
+                    let textcertificado = textLangs["pt-BR"].certificados
+                    document.querySelector('#main-title').innerHTML = textcertificado["main-title"]
+                    document.querySelector('#resumo').innerHTML = textcertificado["resumo"]
+                    document.querySelector('#certificado-presencial').innerHTML = textcertificado["certificado-presencial"]
+                    document.querySelector('#prepara-title').innerHTML = textcertificado["prepara-title"]
+                    document.querySelector('#certificado-online').innerHTML = textcertificado["certificado-online"]
+                    document.querySelector('#voltar-curriculo').innerHTML = textcertificado["voltar-curriculo"]
                     break;
             }
             break;

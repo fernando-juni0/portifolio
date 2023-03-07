@@ -53,20 +53,57 @@ main{
     color: var(--color-text-primary);
     text-align: center;
 }
-#cert-row{
+.cert-row{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
     margin-top: 2em;
+
 }
 .cert-col{
-    width: 15em;
-    height: 20em;
+    width: 16em;
+    height: 22em;
     margin-top: 2em;
-    background-color: aquamarine;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.pdf-model{
+    height: 80%;
+    width: 100%;
+}
+.pdf-title{
+    font: bold 1.2em 'Imprima', sans-serif;
+    color: var(--color-text-primary);
+    text-align: center;
+
+}
+.pdf-curso{
+    font: 0.8em 'inter', sans-serif;
+    color: var(--text-gray-color-primary);
+    text-align: center;
+}
+.pdf-model{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.texts-containner{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #curriculo{
     padding-top: 5em;
     padding-bottom: 3em;
