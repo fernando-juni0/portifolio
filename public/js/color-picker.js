@@ -56,7 +56,7 @@ function colorVerification() {
         document.querySelector(`[data-color=${other_colors[1].nome}]`).classList.remove('color-selected')
         document.querySelector(`[data-color=${other_colors[2].nome}]`).classList.remove('color-selected')
         document.querySelector(`[data-color=${other_colors[3].nome}]`).classList.remove('color-selected')
-        document.querySelector(`[data-color=${color}]`).classList.toggle('color-selected')
+        document.querySelector(`[data-color=${color}]`).classList.add('color-selected')
     }
 }
 
