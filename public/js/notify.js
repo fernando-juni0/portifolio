@@ -1,13 +1,126 @@
-document.getElementById('containner').innerHTML += `<div id="notify-containner"></div>` 
+
+function Noti({ content, status, animation = true, timer = 4000, progress = true, bgcolor, icon = 'show' }) {
+    if (timer > 10000) {
+        timer = 4000;
+    }
+    var status = status;
+    var Noti_container = document.createElement('div');
+    var Noti_alert = document.createElement('div');
+    var timer_progress = document.createElement('div');
+    Noti_container.setAttribute('id', 'Noti_container');
+    document.body.appendChild(Noti_container);
+    document.getElementById('Noti_container').appendChild(Noti_alert);
+    timer_progress.setAttribute('class', 'timer_progress');
+    if (progress != false) {
+        document.querySelector('#Noti_container').appendChild(timer_progress);
+    }
+    if (animation == true) {
+        Noti_alert.style = `
+        -webkit-animation: 1s Noti_animation;
+    animation: 1s Noti_animation;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: ${bgcolor}
+    `;
+    } else {
+        Noti_alert.style = `
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: ${bgcolor}
+    `;
+    }
+    Noti_alert.addEventListener('click', function () {
+        this.remove();
+        timer_progress.remove();
+    });
+    const noti_destroy = function () {
+        document.getElementById('Noti_container').removeChild(Noti_alert);
+        timer_progress.remove();
+    }
+    var timeout = setTimeout(() => {
+        noti_destroy();
+    }, timer);
+    Noti_alert.onmouseover = function () {
+        clearTimeout(timeout);
+        timer_progress.style.animationPlayState = 'paused';
+        this.onmouseleave = function () {
+            setTimeout(noti_destroy, timer);
+            timer_progress.style.animationPlayState = 'running';
+        }
+    };
+    switch (status) {
+        case 'success':
+            Noti_alert.setAttribute('class', 'Noti_success');
+            icon == 'show' || icon == '' ?
+                Noti_alert.innerHTML = "<ion-icon name='checkmark-circle'></ion-icon>" + "<span>" + content + "</span>"
+                :
+                Noti_alert.innerHTML = content;
+            break;
+        case 'warning':
+            Noti_alert.setAttribute('class', 'Noti_warning');
+            icon == 'show' || icon == '' ?
+                Noti_alert.innerHTML = "<ion-icon name='warning'></ion-icon>" + "<span>" + content + "</span>"
+                :
+                Noti_alert.innerHTML = content;
+            break;
+        case 'danger':
+            Noti_alert.setAttribute('class', 'Noti_danger');
+            icon == 'show' || icon == '' ?
+                Noti_alert.innerHTML = "<ion-icon name='close-circle'></ion-icon>" + "<span>" + content + "</span>"
+                :
+                Noti_alert.innerHTML = content;
+            break;
+        default:
+            Noti_alert.setAttribute('class', 'Noti_success');
+            Noti_alert.innerHTML = "<ion-icon name='checkmark-circle'></ion-icon>" + "<span>" + content + "</span>";
+            break;
+    }
+    var new_timer_mode = '';
+    switch (timer) {
+        case 1000:
+            new_timer_mode = '1s';
+            break;
+        case 2000:
+            new_timer_mode = '2s';
+            break;
+        case 3000:
+            new_timer_mode = '3s';
+            break;
+        case 4000:
+            new_timer_mode = '4s';
+            break;
+        case 5000:
+            new_timer_mode = '5s';
+            break;
+        case 6000:
+            new_timer_mode = '6s';
+            break;
+        case 7000:
+            new_timer_mode = '7s';
+            break;
+        case 8000:
+            new_timer_mode = '8s';
+            break;
+        case 9000:
+            new_timer_mode = '9s';
+            break;
+        case 10000:
+            new_timer_mode = '10s';
+            break;
+        default:
+            new_timer_mode = '4s';
+    }
+    timer_progress.style.animation = `${new_timer_mode} timer_progress_animation`;
+    timer_progress.style.webkitAnimation = `${new_timer_mode} timer_progress_animation`;
+}
 
 
-
-document.getElementById('containner').innerHTML += `
-<style>
-    #notify-containner{ position: absolute; width: 100vw; left: 50%; transform: translate(-50%, -50%); z-index: 100; }
-    #notificacao-mensage{ position: absolute; width: 80vw; text-align: center; top: -50px; left: 50%; transform: translate(-50%, -50%); transition: 1s; z-index: 100;  font-size: 1.2em;  font-weight: bold; font-family: 'Inter', sans-serif; }
-</style>
-`
 
 const lang = {
     'pt-BR':{
@@ -24,61 +137,69 @@ const lang = {
 var idioma = localStorage.getItem('lang')
 document.querySelectorAll('.lang-icons').forEach((item)=>{
     item.addEventListener('click',()=>{
-        setTimeout(()=>{     
-            idioma = localStorage.getItem('lang')
-        }, 2100);
-
-    })
+        idioma = item.getAttribute('data-lang')
+   })
 })
-function time() {
-    setTimeout(()=>{     
-        if (document.getElementById('notificacao-mensage')) {
-            document.getElementById('notificacao-mensage').style.top = "30px"
-        }
-        
-
-    }, 0200);
-    setTimeout(()=>{  
-        if (document.getElementById('notificacao-mensage')) {
-            document.getElementById('notificacao-mensage').style.top ="-50px"
-        }   
-        
-        setTimeout(()=>{     
-            document.getElementById('notify-containner').innerHTML =""
-    
-        }, 1000);
-    }, 5000);
-}
-
 if (location.pathname == '/') {
     mensage()
 }
+
+
+
+
+function success() {
+    Noti({
+        status: 'success',
+        content: 'Success message',
+        timer: 5000,
+        animation: true,
+        progress: true,
+    });
+}
+function warning() {
+    Noti({
+        status: 'warning',
+        content: 'Warning message',
+        timer: 5000,
+        animation: true,
+        progress: true
+    });
+}
+function danger() {
+    Noti({
+        status: 'danger',
+        content: 'Error message',
+        timer: 5000,
+        animation: true,
+        progress: true
+    });
+}
+
 function mensage() {
-    document.getElementById('notify-containner').innerHTML = ""
-    clearTimeout()
-    setTimeout(()=>{     
-        document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="color: #f18c09; text-shadow: 0px 0px 25px #f18c09;">${idioma == "pt-BR" ? lang["pt-BR"].mensage : lang["en-US"].mensage}</div>`
-    }, 0100);
-    time() 
+    Noti({
+        status: 'warning',
+        content: lang[idioma].mensage,
+        timer: 10000,
+        animation: true,
+        progress: true
+    });
 }
 
 function saveNot() {
-    document.getElementById('notify-containner').innerHTML = ""
-    clearTimeout()
-    setTimeout(()=>{     
-        document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="color: #00ff00; text-shadow: 0px 0px 25px #00ff00;">${idioma == "pt-BR" ? lang["pt-BR"].save : lang["en-US"].save }</div>`
-    }, 0100);
-    
-    time() 
+    Noti({
+        status: 'success',
+        content: lang[idioma].save,
+        timer: 5000,
+        animation: true,
+        progress: true,
+    });
 }
 function contact() {
-    document.getElementById('notify-containner').innerHTML = ""
-    clearTimeout()
-    setTimeout(()=>{     
-        document.getElementById('notify-containner').innerHTML = ` <div id="notificacao-mensage" style="color: #00ff00; text-shadow: 0px 0px 25px #00ff00;">${idioma == "pt-BR" ? lang["pt-BR"].contact : lang["en-US"].contact }</div>`
-    }, 0100);
-    time() 
+    Noti({
+        status: 'success',
+        content: lang[idioma].contact,
+        timer: 5000,
+        animation: true,
+        progress: true,
+    });
 }
-
-
-
