@@ -248,7 +248,11 @@ footer{
         display: flex;
     }
 }
-
+@media screen and (max-height: 720px) {
+    header{
+        overflow-y: scroll;
+    }
+}
 
 @media screen and (max-width: 1200px) {
     header{
