@@ -1,9 +1,17 @@
 var check = document.getElementById('checkbox')
+
+
+
 themeVerificarion()
 function themeVerificarion(){
     let themeLocal = localStorage.getItem('theme')
     if (themeLocal == null || themeLocal == undefined) {
-        localStorage.setItem('theme', 'dark')
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches == false) {
+            localStorage.setItem('theme', 'light')
+        }else{
+            localStorage.setItem('theme', 'dark')
+        }
+        
         location.reload()
     }
     if (themeLocal == 'dark') {
