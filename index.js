@@ -82,7 +82,7 @@ app.post('/contact/menssage', (req,res)=>{
     trasporter.sendMail({
         text: data.nome +" | "+ data.email +" | "+ data.mensagem,
         html: '<b>Nome: </b>' + data.nome +" <br><br> "+ '<b>Email: </b>' +data.email +" <br><br> "+ '<b>Mensagem: </b>' +data.mensagem,
-        subject: "Nova Mensagem do Portifolio enviada por"+ data.nome,
+        subject: "Nova Mensagem do Portifolio enviada por "+ data.nome,
         from: "Fernando Júnio <fernando132sj@gmail.com>",
         to: ['junio132sj@gmail.com','fernando132sj@gmail.com']
     })

@@ -231,20 +231,14 @@ footer{
 }
 
 
-
 @media screen and (max-width: 300px) {
     header{
-        
         position: fixed;
         left: -200%;
-
     }
-    
 }
 @media screen and (min-width: 740px) {
     header{
-        
-        height: 100vh;
         display: flex;
     }
 }
@@ -256,7 +250,6 @@ footer{
 
 @media screen and (max-width: 1200px) {
     header{
-        
         position: fixed;
         left: -200%;
     }

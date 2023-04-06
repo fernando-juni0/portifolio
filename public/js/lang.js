@@ -33,7 +33,8 @@ var textLangs = {
             "spotify-descricao":"The spotify clone was my first project when I really started programming it helped me a lot mainly with the backend in nodejs and thanks to it I also got my old job, currently I see several problems with it because I didn't have all the knowledge at the time however it is still very functional.<b><br><br>To see the repository click on the card and you will be redirected!</b>",
             "work-title":"Below are some of my work or personal projects.",
             "work-subTitle":"You can hover over cards to learn more or click on them to be redirected either to the repository or to a webpage.",
-            "portifolio-descricao":"By clicking you can see the source code of the portfolio."
+            "portifolio-descricao":"By clicking you can see the source code of the portfolio.",
+            "devtools-descricao":"This is a project I am developing to speed up the process of formatting the computer, it will be possible to download essential applications, activate optimizations and configurations for developers.<b><br><br>To see the repository click on the card that you will be redirected!</b>"
         },
         curriculo:{
             'main-title':"My Curriculum! &#x2661;",
@@ -79,7 +80,8 @@ var textLangs = {
             "spotify-descricao":"O clone do spotify foi o meu primeiro projeto quando realmente comecei a programar me ajudou muito principalmente com o back-end em nodejs e graças a ele também consegui meu antigo emprego, atualmente vejo vários problemas nele pois eu não tinha todos os conhecimentos na época porém ainda esta bem funcional.<b><br><br>Para ver o repositório  clique no card que você será redirecionado!</b>",
             "work-title":"Abaixo são alguns dos meus trabalhos ou projetos pessoais.",
             "work-subTitle":"Você pode passar o mouse sobre os cards para saber mais ou clicar nos mesmos para ser redirecionado ou para o repositório ou para uma página web.",
-            "portifolio-descricao":"Clicando você pode ver o código fonte do portfólio"
+            "portifolio-descricao":"Clicando você pode ver o código fonte do portfólio",
+            "devtools-descricao":"Esse e um projeto que eu estou desenvolvendo para dar mais agilidade no processo de formatação do computador, nele sera possível baixar aplicativos essenciais, ativar otimizações e configurações para desenvolvedores.<b><br><br>Para ver o repositório  clique no card que você será redirecionado!</b>"
         },
         curriculo:{
             'main-title':"Meu Curriculo! &#x2661;",
@@ -104,9 +106,15 @@ var textLangs = {
 
 
 
+
 langVerification()
 function langVerification(){
     const idioma = localStorage.getItem('lang')
+    function textSelect(ids,page) {
+        ids.forEach((res)=>{
+            document.querySelector("#"+res).innerHTML = page[res]
+        })
+    }
     switch (idioma) {
         case undefined:
         case null:
@@ -122,59 +130,30 @@ function langVerification(){
             langSelected.src = '../public/assets/svgs/US.svg'
             switch (index) {
                 case 0:
-                    let textIndex = textLangs["en-US"].index
-                    document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
-                    document.querySelector('#main-title').innerHTML = textIndex["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
-                    document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
+                    textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs["en-US"].index)
                     break;
 
                 case 1:
-                    let textabout = textLangs["en-US"].about
-                    document.querySelector('#main-title').innerHTML = textabout["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textabout["text-paragrafo"]
+                    textSelect(['main-title',"text-paragrafo"],textLangs["en-US"].about)
                     break;
 
                 case 2:
-                    let textskills = textLangs["en-US"].skills
-                    document.querySelector('#main-title').innerHTML = textskills["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textskills["text-paragrafo"]
-                    document.querySelector('#work-resume').innerHTML = textskills["work-resume"]
-                    document.querySelector('#work-title').innerHTML = textskills["work-title"]
+                    textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["en-US"].skills)
                     break;
 
                 case 3:
-                    let textwork = textLangs["en-US"].work
-                    document.querySelector('#twitter-descricao').innerHTML = textwork["twitter-descricao"]
-                    document.querySelector('#infoeduc-descricao').innerHTML = textwork["infoeduc-descricao"]
-                    document.querySelector('#spotify-descricao').innerHTML = textwork["spotify-descricao"]
-                    document.querySelector('#work-title').innerHTML = textwork["work-title"]
-                    document.querySelector('#work-subTitle').innerHTML = textwork["work-subTitle"]
-                    document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
+                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-subTitle"],textLangs["en-US"].work)
                     break;
 
                 case 4:
-                    let textcurriculo = textLangs["en-US"].curriculo
-                    document.querySelector('#main-title').innerHTML = textcurriculo["main-title"]
-                    document.querySelector('#resumo').innerHTML = textcurriculo["resumo"]
-                    document.querySelector('#certificado-button').innerHTML = textcurriculo["certificado-button"]
-                    document.querySelector('#download-button').innerHTML = textcurriculo["download-button"]
+                    textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["en-US"].curriculo)
                     break;
 
                 case 5:
-                    let textcontact = textLangs["en-US"].contact
-                    document.querySelector('#main-title').innerHTML = textcontact["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
-                    document.querySelector('#enviar').innerHTML = textcontact.enviar
+                    textSelect(["main-title","text-paragrafo",'enviar'], textLangs["en-US"].contact)
                     break;
                 case 6:
-                    let textcertificado = textLangs["en-US"].certificados
-                    document.querySelector('#main-title').innerHTML = textcertificado["main-title"]
-                    document.querySelector('#resumo').innerHTML = textcertificado["resumo"]
-                    document.querySelector('#certificado-presencial').innerHTML = textcertificado["certificado-presencial"]
-                    document.querySelector('#prepara-title').innerHTML = textcertificado["prepara-title"]
-                    document.querySelector('#certificado-online').innerHTML = textcertificado["certificado-online"]
-                    document.querySelector('#voltar-curriculo').innerHTML = textcertificado["voltar-curriculo"]
+                    textSelect(["main-title","resumo","voltar-curriculo","certificado-online","prepara-title",'certificado-presencial'], textLangs["en-US"].certificados)
                     break;
             }
             break;
@@ -183,59 +162,30 @@ function langVerification(){
             langSelected.src = '../public/assets/svgs/BR.svg'
             switch (index) {
                 case 0:
-                    let textIndex = textLangs["pt-BR"].index
-                    document.querySelector('#contact-button').innerHTML = textIndex["contact-button"]
-                    document.querySelector('#main-title').innerHTML = textIndex["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textIndex["text-paragrafo"]
-                    document.querySelector('#picker-text').innerHTML = textIndex["picker-text"]
+                    textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs["pt-BR"].index)
                     break;
 
                 case 1:
-                    let textabout = textLangs["pt-BR"].about
-                    document.querySelector('#main-title').innerHTML = textabout["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textabout["text-paragrafo"]
+                    textSelect(['main-title',"text-paragrafo"],textLangs["pt-BR"].about)
                     break;
 
                 case 2:
-                    let textskills = textLangs["pt-BR"].skills
-                    document.querySelector('#main-title').innerHTML = textskills["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textskills["text-paragrafo"]
-                    document.querySelector('#work-resume').innerHTML = textskills["work-resume"]
-                    document.querySelector('#work-title').innerHTML = textskills["work-title"]
+                    textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["pt-BR"].skills)
                     break;
 
                 case 3:
-                    let textwork = textLangs["pt-BR"].work
-                    document.querySelector('#twitter-descricao').innerHTML = textwork["twitter-descricao"]
-                    document.querySelector('#infoeduc-descricao').innerHTML = textwork["infoeduc-descricao"]
-                    document.querySelector('#spotify-descricao').innerHTML = textwork["spotify-descricao"]
-                    document.querySelector('#work-title').innerHTML = textwork["work-title"]
-                    document.querySelector('#work-subTitle').innerHTML = textwork["work-subTitle"]
-                    document.querySelector('#portifolio-descricao').innerHTML = textwork["portifolio-descricao"]
+                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-subTitle"],textLangs["pt-BR"].work)
                     break;
 
                 case 4:
-                    let textcurriculo = textLangs["pt-BR"].curriculo
-                    document.querySelector('#main-title').innerHTML = textcurriculo["main-title"]
-                    document.querySelector('#resumo').innerHTML = textcurriculo["resumo"]
-                    document.querySelector('#certificado-button').innerHTML = textcurriculo["certificado-button"]
-                    document.querySelector('#download-button').innerHTML = textcurriculo["download-button"]
+                    textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["pt-BR"].curriculo)
                     break;
 
                 case 5:
-                    let textcontact = textLangs["pt-BR"].contact
-                    document.querySelector('#main-title').innerHTML = textcontact["main-title"]
-                    document.querySelector('#text-paragrafo').innerHTML = textcontact["text-paragrafo"]
-                    document.querySelector('#enviar').innerHTML = textcontact.enviar
+                    textSelect(["main-title","text-paragrafo",'enviar'], textLangs["pt-BR"].contact)
                     break;
                 case 6:
-                    let textcertificado = textLangs["pt-BR"].certificados
-                    document.querySelector('#main-title').innerHTML = textcertificado["main-title"]
-                    document.querySelector('#resumo').innerHTML = textcertificado["resumo"]
-                    document.querySelector('#certificado-presencial').innerHTML = textcertificado["certificado-presencial"]
-                    document.querySelector('#prepara-title').innerHTML = textcertificado["prepara-title"]
-                    document.querySelector('#certificado-online').innerHTML = textcertificado["certificado-online"]
-                    document.querySelector('#voltar-curriculo').innerHTML = textcertificado["voltar-curriculo"]
+                    textSelect(["main-title","resumo","voltar-curriculo","certificado-online","prepara-title",'certificado-presencial'], textLangs["pt-BR"].certificados)
                     break;
             }
             break;
@@ -244,6 +194,7 @@ function langVerification(){
 }
 document.getElementById('lang-containner').addEventListener('click',()=>{
     document.getElementById('lang-containner').style.display = 'none'
+    open_lang_popup = false
 })
 
 document.getElementById('lang_selected').addEventListener('click',()=>{
