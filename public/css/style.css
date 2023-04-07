@@ -236,6 +236,10 @@ main{
 .color-selected{
     content: url(../assets/svgs/done_white_24dp.svg);
 }
+#index-ola{
+    font-size: 1.5em;
+    color: var(--color-secundary);
+}
 @media screen and (min-width: 1400px) {
     #body-content, #h1-content{
         margin: 4vh 0 4vh 0;

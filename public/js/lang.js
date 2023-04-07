@@ -7,7 +7,7 @@ var index = Number(document.getElementById('index').value)
 var textLangs = {
     'en-US':{
         index:{
-            'main-title': "Hello, <br> My name is Fernando,<br> I'm a full-stack developer",
+            'main-title': "<span id='index-ola'>Hello</span>, <br> My name is Fernando,<br> I'm a full-stack developer",
             'contact-button':'Contact Me!',
             'text-paragrafo':'Back-End Developer / JavaScript Expert',
             'picker-text': 'Select your favorite color!'
@@ -53,7 +53,7 @@ var textLangs = {
     },
     'pt-BR':{
         index:{
-            'main-title': "Olá, <br> Meu nome é Fernando,<br> Sou um desenvolvedor full-stack",
+            'main-title': "<span id='index-ola'>Olá</span>, <br> Meu nome é Fernando,<br> Sou um desenvolvedor full-stack",
             'contact-button':'Entre em contato!',
             'text-paragrafo':'Desenvolvedor Back-End / Especialista em JavaScript',
             'picker-text': 'Selecione a sua cor favorita!'
@@ -142,7 +142,7 @@ function langVerification(){
                     break;
 
                 case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-subTitle"],textLangs["en-US"].work)
+                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-title","work-subTitle"],textLangs["en-US"].work)
                     break;
 
                 case 4:
@@ -174,7 +174,7 @@ function langVerification(){
                     break;
 
                 case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-subTitle"],textLangs["pt-BR"].work)
+                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-title","work-subTitle"],textLangs["pt-BR"].work)
                     break;
 
                 case 4:
