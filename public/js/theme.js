@@ -28,7 +28,6 @@ function themeVerificarion(){
 
 
 function theme(){
-
     if (check.checked == true) {
         localStorage.setItem('theme', 'dark')
     }else{

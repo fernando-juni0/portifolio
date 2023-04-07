@@ -33,10 +33,6 @@ var full_colors = [
 colorVerification()
 function colorVerification() {
     let color = localStorage.getItem('color')
-
-    
-    
-    
     let other_colors = []
     var hex = null
     full_colors.forEach(item=>{
@@ -59,7 +55,6 @@ function colorVerification() {
         document.querySelector(`[data-color=${color}]`).classList.add('color-selected')
     }
 }
-
 
 if (document.getElementById('index').value == 0) {
     document.getElementById('newColor').addEventListener('click',()=>{
@@ -88,13 +83,6 @@ if (document.getElementById('index').value == 0) {
         document.getElementById('color-sec').style.display = 'block'
     }
 }
-
-
-
-
-
-
-
 
 document.querySelectorAll('.colors').forEach(item=>{
     item.addEventListener('click',()=>{

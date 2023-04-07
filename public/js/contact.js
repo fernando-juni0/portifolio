@@ -1,6 +1,4 @@
 document.getElementById('form').addEventListener('submit',(e)=>{contact()})
-
-
 document.getElementById('idioma').value = localStorage.getItem('lang')
 
 var full_colors = [

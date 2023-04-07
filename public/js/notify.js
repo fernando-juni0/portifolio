@@ -144,37 +144,6 @@ if (location.pathname == '/') {
     mensage()
 }
 
-
-
-
-function success() {
-    Noti({
-        status: 'success',
-        content: 'Success message',
-        timer: 5000,
-        animation: true,
-        progress: true,
-    });
-}
-function warning() {
-    Noti({
-        status: 'warning',
-        content: 'Warning message',
-        timer: 5000,
-        animation: true,
-        progress: true
-    });
-}
-function danger() {
-    Noti({
-        status: 'danger',
-        content: 'Error message',
-        timer: 5000,
-        animation: true,
-        progress: true
-    });
-}
-
 function mensage() {
     Noti({
         status: 'warning',
