@@ -87,7 +87,7 @@ app.post('/contact/menssage', (req,res)=>{
         to: ['junio132sj@gmail.com','fernando132sj@gmail.com']
     })
     res.redirect('/contact')
-})  
+})
 
 
 //-----------------GET--------------------
