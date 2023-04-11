@@ -11,7 +11,7 @@ main{
 #content{
     padding: 15px;
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     justify-content: center;
     flex-direction: column;
@@ -234,5 +234,35 @@ main{
     }
     body,html{
         height: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    #htmlTag::after{
+        margin-left: -2em;
+    }
+    #main-title{
+        margin-left: 1em;
+    }
+    #paragrafo-content{
+        margin-left: 4em;
+        width: 80%;
+    }
+    #text-paragrafo{
+        width: 80%;
+    }
+    #FormTag,#FormTagBottom{
+        margin-left: 2em;
+    }
+    #htmlTag-bottom{
+        margin-top: 2em;
+    }
+    #form-conteinner {
+        margin: 15px 0 15px 3em;
+    }
+    #form-conteinner input[type='text'],#form-conteinner input[type='email'],#form-conteinner textarea {
+        width: 80%;
+    }
+    #enviar{
+        font-size: 1em;
     }
 }

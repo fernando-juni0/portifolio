@@ -226,7 +226,6 @@ footer{
 #header.active {
     left: 0;
     z-index: 100;
-    min-width: 65vw;
     transition: 0.5s;
 }
 

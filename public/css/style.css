@@ -241,6 +241,7 @@ main{
     color: var(--color-secundary);
 }
 @media screen and (min-width: 1400px) {
+    
     #body-content, #h1-content{
         margin: 4vh 0 4vh 0;
     }
@@ -333,3 +334,14 @@ main{
     
 }
 
+@media screen and (max-width: 700px) {
+    #htmlTag::after{
+        margin-left: -2em;
+    }
+    #main-title{
+        margin-left: 1em;
+    }
+    #paragrafo-content{
+        margin-left: 4em;
+    }
+}
