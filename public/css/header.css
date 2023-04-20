@@ -3,7 +3,7 @@ header{
     top: 0;
     left: 0;
     height: 100vh;
-    position: sticky;
+    position: fixed;
     background-color: var(--secundary-color-header);
     display: flex;
     flex-direction: column;

@@ -13,33 +13,26 @@
         <main>
             <div id="main-containner">
                 <div id="content">
-                    <span id="htmlTag">&lt;HTML&gt;</span><br>
-                    <div id="body-content">
-                        <div id="h1-content">
-                            <h1 id="main-title"></h1>
-                            <p id="paragrafo-content">
-                                <span id="text-paragrafo"></span>
-                            </p>
-                        <div id="form-content">
-                            <span id="FormTag">&lt;FORM&gt;</span><br>
-                            <form action="/contact/menssage" id="form" method="post">
-                                <input type="text" name="color" id="color" hidden>
-                                <input type="text" name="lang" id="idioma" hidden>
-                                <div id="form-conteinner">
-                                    <div id="form_inputs">
-                                        <input id="nome" name="nome" type="text" placeholder="Name" required>
-                                        <input id="email" name="email" type="email" placeholder="Email" required>
-                                    </div>
-                                    <div id="form-textarea">
-                                        <textarea name="message" id="message" placeholder="Message" required></textarea>
-                                    </div>
-                                    <input type="submit" id="enviar">
-                                </div>
-                            </form>
-                            <span id="FormTagBottom">&lt;/FORM&gt;</span><br>
-                        </div>
+                    <div id="h1-content">
+                        <h1 id="main-title"></h1>
                     </div>
-                    <span id="htmlTag-bottom">&lt;/HTML&gt;</span><br>
+                    <p id="paragrafo-content">
+                        <span id="text-paragrafo"></span>
+                    </p>
+                    <form action="/contact/menssage" id="form-content" method="post">
+                        <input type="text" name="color" id="color" hidden>
+                        <input type="text" name="lang" id="idioma" hidden>
+                        <div id="form-conteinner">
+                            <div id="form_inputs">
+                                <input id="nome" name="nome" type="text" placeholder="Name" required>
+                                <input id="email" name="email" type="email" placeholder="Email" required>
+                            </div>
+                            <div id="form-textarea">
+                                <textarea name="message" id="message" placeholder="Message" required></textarea>
+                            </div>
+                            <input type="submit" id="enviar">
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>

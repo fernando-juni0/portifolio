@@ -1,45 +1,58 @@
 main{
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 18em);
+    position: relative;
+    left: 18em;
     background-color: var(--main-background);
 }
 #main-containner{
     display: flex;
     align-items: center;
-    height: 100%;
 }
 #content{
     padding: 15px;
     display: flex;
     height: 100vh;
     width: 100%;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 #main-title{
     color: var(--color-secundary);
-    margin-left: 1.5em;
     font-family: 'Imprima', sans-serif;
     font-size: 4em;
-    
+    text-align: center;
 }
-#body-content, #h1-content{
+#h1-content{
+    width: 100%;
+    display: flex;
+    margin-top: 2em;
+    justify-content: center;
+}
+#form-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+#form-conteinner{
+    margin: 15px 0 15px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#form-conteinner{
-    margin: 15px 0 15px 7.5em;
+    align-items: center;
+    width: 100%;
 }
 #form_inputs input:first-child{
     margin-right: 0.5vw;
 }
+#form_inputs{
+    display: flex;
+}
 #form_inputs input{
     margin-top: 5px;
-    height: 2em;
+    height: 2.5em;
     width: 18vw;
-    min-width: 200px;
     padding: 0.5em;
     font-size: 1em;
     background-color: var(--secundary-color-header);
@@ -48,12 +61,16 @@ main{
     color: var(--text-gray-color-primary);
     font-family: 'Imprima', sans-serif;
 }
+#form-textarea{
+    display: flex;
+    justify-content: center;
+}
 #form-textarea textarea{
     width: 36.7vw;
-    min-width: 405px;
-    height: 16vh;
+    height: 25vh;
     resize: none;
     border: none;
+    border-radius: 4px;
     margin-top: 1vh;
     background-color: var(--secundary-color-header);
     padding: 0.5em;
@@ -64,16 +81,17 @@ main{
 #enviar{
     border: 1px solid var(--color-secundary);
     background-color: transparent;
-    width: 5vw;
+    width: 10vw;
     min-width: 80px;
-    height: 5vh;
+    height: 6vh;
     min-height: 40px;
-    font-size: 0.8em;
+    font-size: 1.2em;
     color: var(--color-secundary);
     margin-top: 1vh;
     cursor: pointer;
     transition: 0.5s;
     border-radius: 6px;
+    margin-top: 1em;
 }
 #enviar:hover{
     text-shadow: 0px 0px 13px var(--color-secundary);
@@ -82,187 +100,47 @@ main{
 }
 
 
-
-
-#htmlTag-bottom{
-    user-select: none;
-    margin-top: 1.5em;
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    font-weight: 200;
-}
-#htmlTag-bottom::before{
-    content: '</BODY>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-top: -2em;
-    margin-left: 1em;
-    font-weight: 200;
-}
-#htmlTag{
-    user-select: none;
-    color: var(--text-gray-color-secundary);
-    font-size: 1em;
-    font-family: 'Covered By Your Grace', cursive;
-    font-weight: 200;
-    margin-bottom: 1em;
-}
-#htmlTag::after{
-    content: '<BODY>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-top: 1.5em;
-    margin-left: -1em;
-    font-weight: 200;
-}
-
 #paragrafo-content{
-    margin-left: 7em;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 1em;
-    width: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
+
 #text-paragrafo{
-    font-size: 1.2em;
+    font-size: 1em;
+    width: 50%;
+    text-align:center;
     color: var(--text-gray-color-primary);
     font-family: 'Imprima', sans-serif;
 }
-#text-paragrafo::before{
-    content: '<P>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-left: -1.8em;
-    font-weight: 200;
-}
-#text-paragrafo::after{
-    content: '</P>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-left: 0.5em;
-    font-weight: 200;
-}
 
-#main-title::before{
-    content: '<H1>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-top: -1.2rem;
-    margin-left: -1em;
-    font-weight: 200;
-}
-#main-title::after{
-    content: '</H1>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-top: 1.5em;
-    margin-left: 0.5em;
-    font-weight: 200;
-}
-#main-title::before{
-    content: '<H1>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-top: -1.2rem;
-    margin-left: -1em;
-    font-weight: 200;
-}
-#main-title::after{
-    content: '</H1>';
-    font-family: 'Covered By Your Grace', cursive;
-    color: var(--text-gray-color-secundary);
-    font-size: 1rem;
-    position: absolute;
-    margin-top: 1.5em;
-    margin-left: 0.5em;
-    font-weight: 200;
-}
-#FormTag{
-    margin-left: 5.5em;
-    user-select: none;
-    color: var(--text-gray-color-secundary);
-    font-size: 1em;
-    font-family: 'Covered By Your Grace', cursive;
-    font-weight: 200;
-    margin-bottom: 1em;
-}
-#FormTagBottom{
-    margin-left: 5.5em;
-    user-select: none;
-    color: var(--text-gray-color-secundary);
-    font-size: 1em;
-    font-family: 'Covered By Your Grace', cursive;
-    font-weight: 200;
-    margin-bottom: 1em;
-}
-@media screen and (max-width: 600px) {
-    #form-textarea textarea{
-        min-width: 60vw;
-    }
-    #form_inputs input:nth-child(3){
-        margin-top: 10px;
+@media screen and (max-width: 700px) {
+    #form_inputs{
+        flex-direction: column;
+        width: 80%;
     }
     #form_inputs input{
-        width: 60vw;
-        min-width: 18vw;
+        width: 100%;
     }
-}
-
-@media screen and (min-width: 1200px) {
     #form-textarea textarea{
-        height: 24vh;
+        width: 100%;
     }
-    #body-content, #h1-content{
-        margin: 2vh 0 2vh 0;
-    }
-    #enviar{
-        font-size: 1.2em;
-    }
-    body,html{
-        height: 100%;
-    }
-}
-@media screen and (max-width: 700px) {
-    #htmlTag::after{
-        margin-left: -2em;
-    }
-    #main-title{
-        margin-left: 1em;
-    }
-    #paragrafo-content{
-        margin-left: 4em;
+    #form-textarea{
         width: 80%;
     }
     #text-paragrafo{
         width: 80%;
     }
-    #FormTag,#FormTagBottom{
-        margin-left: 2em;
-    }
-    #htmlTag-bottom{
-        margin-top: 2em;
-    }
-    #form-conteinner {
-        margin: 15px 0 15px 3em;
-    }
-    #form-conteinner input[type='text'],#form-conteinner input[type='email'],#form-conteinner textarea {
-        width: 80%;
-    }
     #enviar{
         font-size: 1em;
+    }
+} 
+@media screen and (max-width: 1200px) {
+    main{
+        left: 0;
+        width: 100%;
     }
 }
