@@ -11,75 +11,71 @@ main{
 }
 #main-row{
     display: flex;
-    flex-wrap: wrap;
-
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     margin-top: 5em;
+    width: 100%;
+    height: 100%;
 }
 
 .main-col{
-    margin: 1.5em;
     border: 1px solid rgb(99, 99, 99);
-    border-radius: 20px;
-    height: 210px;
-    max-width: 180px;
-    min-width: 160px;
+    border-radius: 10px;
+    max-height: 30em;
+    height: 40vh;
+    width: 80%;
     margin-top: 10px;
-    text-align: center;
+    margin-bottom: 2em;
     text-decoration: none;
     color: var(--color-text-primary);
-    cursor: pointer;
     overflow: hidden;
+    display: flex;
 }
-
-.main-col img{
-    margin-top: 10px;
+.text-cols{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2em;
+}
+.text-description-cols span{
+    word-wrap: break-word;
+}
+.containner-image-cols{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-cols{
     width: 80%;
-    height: 70%;
-    border-radius: 100%;
-    padding-bottom: 5px;
+    height: 80%;
+    border-radius: 10px;
 }
 .title{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.8em;
     font-family: 'Imprima', sans-serif;
 }
 .descricao{
-    position: relative;
-    top: 50px;
-    transition: 0.8s;
-    background-color: transparent;
-    height: 76%;
-    font-size: 16px;
     border-radius: 20px;
-    color: white;
-    text-align: center;
-    padding: 10px;
+    color: var(--text-gray-color-primary);
     font-family: 'Imprima', sans-serif;
-    overflow-y: auto;
-    transition: 0.8s;
-    opacity: 0;
+    font-size: 1em;
 }
-
-.descricao::-webkit-scrollbar {
-    
-    background-color: transparent;
-} 
-  
-.descricao::-webkit-scrollbar-thumb {   
-    background-color: transparent; 
+.descricao b{
+    color: var(--color-text-primary);
 }
-.descricao::-webkit-scrollbar-thumb:hover{
-    background-color: transparent;
+.text-tecs-cols{
+    display: flex;
+    align-items: center;
 }
-
-.main-col:hover .descricao{
-    background-color: rgb(49, 49, 49);
-    top: -130px;
-    transition: 0.8s;
-    opacity: 100;
+.text-tecs-cols img{
+    width: 2em;
+    margin-right: 1.5em;
 }
 #title-containner{
     padding: 15px;
@@ -103,10 +99,14 @@ main{
 #work-subTitle{
     font-family: 'Imprima', sans-serif;
     font-size: 1rem;
-    text-decoration: underline;
-    color: var(--color-text-primary);
+    color: var( --text-gray-color-primary);
 }
-@media screen and (min-width: 760px) {
+
+    
+/* [aria-label]:hover::after {
+    display: block;
+} */
+/* @media screen and (min-width: 760px) {
     body,html{
         width: 100%;
         height: 100%;
@@ -119,4 +119,4 @@ main{
         height: auto;
         overflow: auto;
     }
-}
+} */

@@ -59,6 +59,7 @@ body{
 
 body,html{
     width: 100%;
+    overflow-x: hidden;
 }
 
 img,br,a{
@@ -77,6 +78,7 @@ main{
     width: calc(100% - 18em);
     position: relative;
     left: 18em;
+    
 }
 @media screen and (max-width: 1200px) {
     main{

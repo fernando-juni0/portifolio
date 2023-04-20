@@ -28,13 +28,12 @@ var textLangs = {
             'work-resume': 'Contributes to the development of a system on the platform that served education networks in Brazil.'
         },
         work:{
-            "twitter-descricao":"This is a Twitter clone that aims to make the main Back-End functionalities in addition to expanding my knowledge, <b><br><br>To see the code click on the card and you will be redirected!</b>",
-            "infoeduc-descricao":"InfoEduc was a company that I worked for here in my city where my role was to develop plugins and templates for the company's main education platform. <b><br><br>To see the platform click on the card and you will be redirected!</b>",
-            "spotify-descricao":"The spotify clone was my first project when I really started programming it helped me a lot mainly with the backend in nodejs and thanks to it I also got my old job, currently I see several problems with it because I didn't have all the knowledge at the time however it is still very functional.<b><br><br>To see the repository click on the card and you will be redirected!</b>",
+            "sounifyme-descricao":"This is a project that I am creating from scratch, a music platform connected with the main streaming music like spotify, the purpose of this platform is to bring people together, it is not just a common music platform it will have means of communication via chat text and voice, options such as creating a band, posting your personal songs at no cost and the best thing about being able to listen to music with several people.",
+            "infoeduc-descricao":"This was my first job in a real company as a programmer, my main role within the company was to develop plugins in <b>nodejs</b> and <b>ejs</b> for the platform that was on <b>bubble</b>, in addition to developing these plugins I was responsible for creating the report templates for our PDF generator, and I was also responsible for maintaining the platform within <b>bubble</b>.",
             "work-title":"Below are some of my work or personal projects.",
             "work-subTitle":"You can hover over cards to learn more or click on them to be redirected either to the repository or to a webpage.",
-            "portifolio-descricao":"By clicking you can see the source code of the portfolio.",
-            "devtools-descricao":"This is a project I am developing to speed up the process of formatting the computer, it will be possible to download essential applications, activate optimizations and configurations for developers.<b><br><br>To see the repository click on the card that you will be redirected!</b>"
+            "portifolio-descricao":"This is the current one and my current portfolio which is what you are accessing now, it was developed in <b>EJS </b> , <b> CSS </b> , <b> Nodejs </b> and mainly <b>JavaScript</b> , this portfolio is covered with features such as changing the theme, changing the color of fonts and assets, changing the language and others, this with the intention of showing my knowledge in javascript.",
+            "devtools-descricao":"This is a simple desktop application that I developed for programmers or even normal people used after formatting the computer, through it it is possible to install the main applications and more using it, it is also possible to activate optimizations in the computer such as disabling unnecessary functions or deleting unnecessary files and also enable some important settings in windows."
         },
         curriculo:{
             'main-title':"My Curriculum! &#x2661;",
@@ -75,13 +74,12 @@ var textLangs = {
             'work-resume': 'Contribui para o desenvolvimento de um sistema na plataforma que atendeu redes de ensino no Brasil.'
         },
         work:{
-            "twitter-descricao":"Esse e um clone do Twitter que tem como objetivo fazer as principais funcionalidades do Back-End alem de expandir meus conhecimentos, <b><br><br>Para ver o repositório  clique no card que você será redirecionado!</b>",
-            "infoeduc-descricao":"InfoEduc foi uma empresa que eu trabalhei aqui em minha cidade aonde minha função era desenvolver plugins e templates para a plataforma principal de educação da empresa. <b><br><br>Para ver a plataforma clique no card que você será redirecionado!</b>",
-            "spotify-descricao":"O clone do spotify foi o meu primeiro projeto quando realmente comecei a programar me ajudou muito principalmente com o back-end em nodejs e graças a ele também consegui meu antigo emprego, atualmente vejo vários problemas nele pois eu não tinha todos os conhecimentos na época porém ainda esta bem funcional.<b><br><br>Para ver o repositório  clique no card que você será redirecionado!</b>",
+            "sounifyme-descricao":"Esse e um projeto que eu estou criando do zero, uma plataforma de música conectada com os principais streaming de música como spotify, o objetivo dessa plataforma e unir pessoas, não e apenas uma plataforma de música comum ela ira contar com meios de comunicação por chat de texto e voz, opções como criação de uma banda, postar as suas músicas pessoais sem nenhuma despesa e o melhor poder escutar música com várias pessoas.",
+            "infoeduc-descricao":"",
             "work-title":"Abaixo são alguns dos meus trabalhos ou projetos pessoais.",
             "work-subTitle":"Você pode passar o mouse sobre os cards para saber mais ou clicar nos mesmos para ser redirecionado ou para o repositório ou para uma página web.",
-            "portifolio-descricao":"Clicando você pode ver o código fonte do portfólio",
-            "devtools-descricao":"Esse e um projeto que eu estou desenvolvendo para dar mais agilidade no processo de formatação do computador, nele sera possível baixar aplicativos essenciais, ativar otimizações e configurações para desenvolvedores.<b><br><br>Para ver o repositório  clique no card que você será redirecionado!</b>"
+            "portifolio-descricao":"Esse e o atual e o meu atual portifólio que e oque você esta acessando agora, ele foi desenvolvido em <b>EJS </b> , <b> CSS </b> , <b> Nodejs </b> e principalmente <b> JavaScript </b> , este portifólio e coberto de funcionalidades como mudar o tema, mudar cor das fontes e assets, mudar o idioma e outros, isso com intuito de mostrar meus conhecimentos em javascript.",
+            "devtools-descricao":"Esse e um aplicativo simples de desktop simples que eu desenvolvi para programadores ou até pessoas normais usaram após formatarem o computador, através dele e possível instalar os principais aplicativos e mais usando, também e possível ativar otimizações no computador como desativar funções desnecessárias ou apagar arquivos desnecessários e também ativar algumas configurações importantes no windows."
         },
         curriculo:{
             'main-title':"Meu Curriculo! &#x2661;",
@@ -112,7 +110,9 @@ function langVerification(){
     const idioma = localStorage.getItem('lang')
     function textSelect(ids,page) {
         ids.forEach((res)=>{
-            document.querySelector("#"+res).innerHTML = page[res]
+            if (res) {
+                document.querySelector("#"+res).innerHTML = page[res]
+            }
         })
     }
     switch (idioma) {
@@ -142,7 +142,7 @@ function langVerification(){
                     break;
 
                 case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-title","work-subTitle"],textLangs["en-US"].work)
+                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-subTitle"],textLangs["en-US"].work)
                     break;
 
                 case 4:
@@ -174,7 +174,7 @@ function langVerification(){
                     break;
 
                 case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'twitter-descricao',"infoeduc-descricao","spotify-descricao","work-title","work-subTitle"],textLangs["pt-BR"].work)
+                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-subTitle"],textLangs["pt-BR"].work)
                     break;
 
                 case 4:
