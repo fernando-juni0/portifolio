@@ -131,6 +131,8 @@ main{
 }
 .containner-buttons-cols{
     text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
 }
  
 .text-title-cols{
