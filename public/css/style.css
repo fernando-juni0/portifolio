@@ -1,6 +1,9 @@
 #containner{
     height: 100%;
 }
+body{
+    overflow-x: hidden; 
+}
 main{
     display: flex;
     width: 100%;
