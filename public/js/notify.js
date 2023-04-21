@@ -119,9 +119,6 @@ function Noti({ content, status, animation = true, timer = 4000, progress = true
     timer_progress.style.animation = `${new_timer_mode} timer_progress_animation`;
     timer_progress.style.webkitAnimation = `${new_timer_mode} timer_progress_animation`;
 }
-
-
-
 const lang = {
     'pt-BR':{
         mensage: "Este site ainda não foi concluído então pode apresentar alguns problemas técnicos.",
@@ -153,7 +150,6 @@ function mensage() {
         progress: true
     });
 }
-
 function saveNot() {
     Noti({
         status: 'success',

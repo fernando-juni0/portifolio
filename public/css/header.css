@@ -71,7 +71,6 @@ header{
     text-decoration: none;
     text-align: center;
 }
-
 footer{
     height: 100%;
     width: 100%;
@@ -82,7 +81,6 @@ footer{
     justify-content: center;
     height: 100%;
     width: 100%;
-    
 }
 #lang_selected{
     -webkit-touch-callout: none;
@@ -103,7 +101,6 @@ footer{
     margin-bottom: 1.5em;
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 }
@@ -111,20 +108,17 @@ footer{
     margin-bottom: 0.5em;
     color: var(--color-text-primary);
 }
-
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
 }
-
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
 .slider {
     position: absolute;
     cursor: pointer;
@@ -136,7 +130,6 @@ footer{
     -webkit-transition: .4s;
     transition: .4s;
 }
-
 .slider:before {
     position: absolute;
     content: "";
@@ -148,26 +141,20 @@ footer{
     -webkit-transition: .4s;
     transition: .4s;
 }
-
 #checkbox:checked + .slider {
     background-color: #1d1d1d;
 }
-
 #checkbox:focus + .slider {
     box-shadow: 0 0 1px #1d1d1d;
 }
-
 #checkbox:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
-  
-
 .slider.round {
     border-radius: 34px;
 }
-
 .slider.round:before {
     border-radius: 50%;
 }
@@ -180,12 +167,10 @@ footer{
     transition: opacity .3s;
     position: fixed;
 }
-
 .hamburger:hover {
     cursor: pointer;
     opacity: .8;
 }
-
 .hamburger .line{
     width: 40px;
     height: 5px;
@@ -194,15 +179,12 @@ footer{
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
 }
-
 .hamburger .line:nth-child(1) {
     background-color: var(--color-secundary);
 }
-
 .hamburger .line:nth-child(2) {
     background-color: var(--text-gray-color-primary);
 }
-
 .hamburger .line:nth-child(3) {
     background-color: var(--color-secundary);
 }
@@ -212,11 +194,9 @@ footer{
 .hamburger.isactive .line:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger.isactive .line:nth-child(1) {
     transform: translateY(13px) rotate(45deg);
 }
-
 .hamburger.isactive .line:nth-child(3) {
     transform: translateY(-13px) rotate(-45deg);
 }
@@ -229,18 +209,19 @@ footer{
     transition: 0.5s;
 }
 
-
 @media screen and (max-width: 300px) {
     header{
         position: fixed;
         left: -200%;
     }
 }
+
 @media screen and (min-width: 740px) {
     header{
         display: flex;
     }
 }
+
 @media screen and (max-height: 720px) {
     header{
         overflow-y: scroll;

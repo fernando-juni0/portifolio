@@ -1,7 +1,5 @@
 var check = document.getElementById('checkbox')
 
-
-
 themeVerificarion()
 function themeVerificarion(){
     let themeLocal = localStorage.getItem('theme')
@@ -24,8 +22,6 @@ function themeVerificarion(){
         check.checked = false
     }
 }
-
-
 
 function theme(){
     if (check.checked == true) {

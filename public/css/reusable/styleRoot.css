@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -31,7 +30,6 @@
     --border-color: rgba(113, 113, 113, 50%);
     --color-fill: #dddddd;
 } 
-
 [data-theme="light"]{
     --header-stack-color: #c7c7c7ef;
     --secundary-color-header: #e6e6e6b7;
@@ -44,34 +42,26 @@
     --border-color: rgba(27, 27, 27, 0.753);
     --color-fill: #000000;
 }
-
 path{
     fill: var(--color-fill);
 }
-
 body{
     background-color: var(--main-background);
 }
-
 #containner{
     display: none;
     transition: 1s;
     width: 100%;
 }
-
 body,html{
     width: 100%;
-    /* overflow-x: hidden; */
 }
-
 img,br,a{
     user-select: none;
 }
-
 img{
     -webkit-user-drag: none;
 }
-
 a{
     text-decoration: none;
     color: var(--text-gray-color-primary);
@@ -80,8 +70,8 @@ main{
     width: calc(100% - 18em);
     position: relative;
     left: 18em;
-    
 }
+
 @media screen and (max-width: 1200px) {
     main{
         left: 0;

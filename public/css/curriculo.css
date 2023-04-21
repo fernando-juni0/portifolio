@@ -41,7 +41,6 @@ main{
     width: 35%;
     height: 85%;
     min-height: 452px;
-
     min-width: 350px;
     border: 2px solid var(--border-color);
     padding: 5px;
@@ -74,7 +73,6 @@ main{
     box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
     transition: 0.5s;
 }
-
 #svgCurriculo{
     margin-left: 0.8em;
     position: relative;
@@ -84,9 +82,6 @@ main{
     fill: var(--color-secundary);
     
 }
-
-
-
 
 @media screen and (max-width: 1200px) {
     #main-containner{
@@ -100,8 +95,7 @@ main{
     #preview-render{
         margin-top: 5em;
     }
-} 
-
+}
 
 @media screen and (min-width: 1000px) {
     body,html{

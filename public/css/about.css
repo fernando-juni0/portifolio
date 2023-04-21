@@ -4,7 +4,6 @@ main{
 }
 #main-containner{
     padding: 15px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,12 +17,10 @@ main{
     font-size: 3em;
     text-align: center;
 }
-
 #text-paragrafo{
     font-size: 1.4em;
     color: var(--text-gray-color-primary);
     font-family: 'Imprima', sans-serif;
-
 }
 #paragrafo-content{
     margin-top: 15vh;

@@ -1,9 +1,25 @@
-#Noti_container { width: 200px; position: fixed; top: 0; right: 0; z-index: 999;margin: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 13px;font-weight: 500;}
-
-#Noti_container ion-icon {font-size: large;}
-
-.Noti_success {padding: 10px 10px;background: #01B940;color: white;width: 100%;margin: 6px 0px;border-radius: 3px;}
-
+#Noti_container { 
+    width: 200px; 
+    position: fixed; 
+    top: 0; 
+    right: 0;
+    z-index: 999;
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+#Noti_container ion-icon {
+    font-size: large;
+}
+.Noti_success {
+    padding: 10px 10px;
+    background: #01B940;
+    color: white;
+    width: 100%;
+    margin: 6px 0px;
+    border-radius: 3px;
+}
 .Noti_warning {
     padding: 10px 10px;
     background: #ffc400;
@@ -12,7 +28,6 @@
     margin: 6px 0px;
     border-radius: 3px;
 }
-
 .Noti_danger {
     padding: 10px 10px;
     background: #F91E00;

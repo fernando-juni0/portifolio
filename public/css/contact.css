@@ -98,8 +98,6 @@ main{
     box-shadow: inset 0 0 10px 0 var(--color-secundary), 0 0 10px 0 var(--color-secundary);
     transition: 0.5s;
 }
-
-
 #paragrafo-content{
     margin-top: 2em;
     margin-bottom: 1em;
@@ -108,7 +106,6 @@ main{
     justify-content: center;
     text-align: center;
 }
-
 #text-paragrafo{
     font-size: 1em;
     width: 50%;
@@ -138,6 +135,7 @@ main{
         font-size: 1em;
     }
 } 
+
 @media screen and (max-width: 1200px) {
     main{
         left: 0;

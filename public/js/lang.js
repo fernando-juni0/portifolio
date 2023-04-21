@@ -2,8 +2,6 @@ var open_lang_popup = false
 var langSelected = document.getElementById('lang_selected')
 var index = Number(document.getElementById('index').value)
 
-
-
 var textLangs = {
     'en-US':{
         index:{
@@ -56,7 +54,6 @@ var textLangs = {
             'contact-button':'Entre em contato!',
             'text-paragrafo':'Desenvolvedor Back-End / Especialista em JavaScript',
             'picker-text': 'Selecione a sua cor favorita!'
-
         },
         about:{
             "main-title":'Um pouco sobre mim',
@@ -100,11 +97,6 @@ var textLangs = {
 
 
 
-
-
-
-
-
 langVerification()
 function langVerification(){
     const idioma = localStorage.getItem('lang')
@@ -132,23 +124,18 @@ function langVerification(){
                 case 0:
                     textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs["en-US"].index)
                     break;
-
                 case 1:
                     textSelect(['main-title',"text-paragrafo"],textLangs["en-US"].about)
                     break;
-
                 case 2:
                     textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["en-US"].skills)
                     break;
-
                 case 3:
                     textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-subTitle"],textLangs["en-US"].work)
                     break;
-
                 case 4:
                     textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["en-US"].curriculo)
                     break;
-
                 case 5:
                     textSelect(["main-title","text-paragrafo",'enviar'], textLangs["en-US"].contact)
                     break;
@@ -164,7 +151,6 @@ function langVerification(){
                 case 0:
                     textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs["pt-BR"].index)
                     break;
-
                 case 1:
                     textSelect(['main-title',"text-paragrafo"],textLangs["pt-BR"].about)
                     break;
@@ -172,15 +158,12 @@ function langVerification(){
                 case 2:
                     textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["pt-BR"].skills)
                     break;
-
                 case 3:
                     textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-subTitle"],textLangs["pt-BR"].work)
                     break;
-
                 case 4:
                     textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["pt-BR"].curriculo)
                     break;
-
                 case 5:
                     textSelect(["main-title","text-paragrafo",'enviar'], textLangs["pt-BR"].contact)
                     break;
@@ -196,7 +179,6 @@ document.getElementById('lang-containner').addEventListener('click',()=>{
     document.getElementById('lang-containner').style.display = 'none'
     open_lang_popup = false
 })
-
 document.getElementById('lang_selected').addEventListener('click',()=>{
     if (open_lang_popup == false) {
         document.getElementById('lang-containner').style.display = 'flex'
@@ -206,7 +188,6 @@ document.getElementById('lang_selected').addEventListener('click',()=>{
         open_lang_popup = false
     }
 })
-
 document.querySelectorAll('.lang-icons').forEach((item)=>{
     item.addEventListener('click',()=>{
         let lang = item.getAttribute('data-lang')

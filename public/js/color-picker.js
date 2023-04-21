@@ -5,7 +5,6 @@ if (localStorage.getItem('color') == null || localStorage.getItem('color') == un
 
 var colorSec = localStorage.getItem('color-sec')
 
-
 var full_colors = [
     {
         nome:'select',

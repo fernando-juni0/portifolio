@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded",() => {
 	const dp = new DecayingPreloader(".pl");
 });
-
 class DecayingPreloader {
 	particles = [];
 	totalParticles = 120;
