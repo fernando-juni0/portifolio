@@ -75,7 +75,7 @@ var textLangs = {
         },
         work:{
             "sounifyme-descricao":"Esse e um projeto que eu estou criando do zero, uma plataforma de música conectada com os principais streaming de música como spotify, o objetivo dessa plataforma e unir pessoas, não e apenas uma plataforma de música comum ela ira contar com meios de comunicação por chat de texto e voz, opções como criação de uma banda, postar as suas músicas pessoais sem nenhuma despesa e o melhor poder escutar música com várias pessoas.",
-            "infoeduc-descricao":"",
+            "infoeduc-descricao":"Este foi meu primeiro emprego em uma empresa real como programador, minha principal função dentro da empresa era desenvolver plugins em <b>nodejs</b> e <b>ejs</b> para a plataforma que estava em <b> bubble</b>, além de desenvolver esses plugins fui responsável pela criação dos templates de relatórios para nosso gerador de PDF, e também fui responsável pela manutenção da plataforma dentro do <b>bubble</b>.",
             "work-title":"Abaixo são alguns dos meus trabalhos ou projetos pessoais.",
             "work-subTitle":"Você pode passar o mouse sobre os cards para saber mais ou clicar nos mesmos para ser redirecionado ou para o repositório ou para uma página web.",
             "portifolio-descricao":"Esse e o atual e o meu atual portifólio que e oque você esta acessando agora, ele foi desenvolvido em <b>EJS </b> , <b> CSS </b> , <b> Nodejs </b> e principalmente <b> JavaScript </b> , este portifólio e coberto de funcionalidades como mudar o tema, mudar cor das fontes e assets, mudar o idioma e outros, isso com intuito de mostrar meus conhecimentos em javascript.",
