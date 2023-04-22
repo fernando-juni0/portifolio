@@ -127,7 +127,7 @@ app.get('/curriculo/certificados',(req,res)=>{
 
 //----------------SERVER-------------------
 
-const port = process.env.PORT || 80
+const port = process.env.PORT_APP || 80
 app.listen(port,()=>{
     console.log(`Servidor rodando na porta ${port}` );
 });
