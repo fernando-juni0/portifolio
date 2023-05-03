@@ -29,7 +29,6 @@ var textLangs = {
             "sounifyme-descricao":"This is a project that I am creating from scratch, a music platform connected with the main streaming music like spotify, the purpose of this platform is to bring people together, it is not just a common music platform it will have means of communication via chat text and voice, options such as creating a band, posting your personal songs at no cost and the best thing about being able to listen to music with several people.",
             "infoeduc-descricao":"This was my first job in a real company as a programmer, my main role within the company was to develop plugins in <b>nodejs</b> and <b>ejs</b> for the platform that was on <b>bubble</b>, in addition to developing these plugins I was responsible for creating the report templates for our PDF generator, and I was also responsible for maintaining the platform within <b>bubble</b>.",
             "work-title":"Below are some of my work or personal projects.",
-            "work-subTitle":"You can hover over cards to learn more or click on them to be redirected either to the repository or to a webpage.",
             "portifolio-descricao":"This is the current one and my current portfolio which is what you are accessing now, it was developed in <b>EJS </b> , <b> CSS </b> , <b> Nodejs </b> and mainly <b>JavaScript</b> , this portfolio is covered with features such as changing the theme, changing the color of fonts and assets, changing the language and others, this with the intention of showing my knowledge in javascript.",
             "devtools-descricao":"This is a simple desktop application that I developed for programmers or even normal people used after formatting the computer, through it it is possible to install the main applications and more using it, it is also possible to activate optimizations in the computer such as disabling unnecessary functions or deleting unnecessary files and also enable some important settings in windows."
         },
@@ -74,7 +73,6 @@ var textLangs = {
             "sounifyme-descricao":"Esse e um projeto que eu estou criando do zero, uma plataforma de música conectada com os principais streaming de música como spotify, o objetivo dessa plataforma e unir pessoas, não e apenas uma plataforma de música comum ela ira contar com meios de comunicação por chat de texto e voz, opções como criação de uma banda, postar as suas músicas pessoais sem nenhuma despesa e o melhor poder escutar música com várias pessoas.",
             "infoeduc-descricao":"Este foi meu primeiro emprego em uma empresa real como programador, minha principal função dentro da empresa era desenvolver plugins em <b>nodejs</b> e <b>ejs</b> para a plataforma que estava em <b> bubble</b>, além de desenvolver esses plugins fui responsável pela criação dos templates de relatórios para nosso gerador de PDF, e também fui responsável pela manutenção da plataforma dentro do <b>bubble</b>.",
             "work-title":"Abaixo são alguns dos meus trabalhos ou projetos pessoais.",
-            "work-subTitle":"Você pode passar o mouse sobre os cards para saber mais ou clicar nos mesmos para ser redirecionado ou para o repositório ou para uma página web.",
             "portifolio-descricao":"Esse e o atual e o meu atual portifólio que e oque você esta acessando agora, ele foi desenvolvido em <b>EJS </b> , <b> CSS </b> , <b> Nodejs </b> e principalmente <b> JavaScript </b> , este portifólio e coberto de funcionalidades como mudar o tema, mudar cor das fontes e assets, mudar o idioma e outros, isso com intuito de mostrar meus conhecimentos em javascript.",
             "devtools-descricao":"Esse e um aplicativo simples de desktop simples que eu desenvolvi para programadores ou até pessoas normais usaram após formatarem o computador, através dele e possível instalar os principais aplicativos e mais usando, também e possível ativar otimizações no computador como desativar funções desnecessárias ou apagar arquivos desnecessários e também ativar algumas configurações importantes no windows."
         },
@@ -131,7 +129,7 @@ function langVerification(){
                     textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["en-US"].skills)
                     break;
                 case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-subTitle"],textLangs["en-US"].work)
+                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title"],textLangs["en-US"].work)
                     break;
                 case 4:
                     textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["en-US"].curriculo)
@@ -159,7 +157,7 @@ function langVerification(){
                     textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["pt-BR"].skills)
                     break;
                 case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-subTitle"],textLangs["pt-BR"].work)
+                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title"],textLangs["pt-BR"].work)
                     break;
                 case 4:
                     textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["pt-BR"].curriculo)
