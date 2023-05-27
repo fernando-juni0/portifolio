@@ -137,9 +137,7 @@ document.querySelectorAll('.lang-icons').forEach((item)=>{
         idioma = item.getAttribute('data-lang')
    })
 })
-if (location.pathname == '/') {
-    mensage()
-}
+
 
 function mensage() {
     Noti({

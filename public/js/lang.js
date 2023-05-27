@@ -26,6 +26,7 @@ var textLangs = {
             'work-resume': 'Contributes to the development of a system on the platform that served education networks in Brazil.'
         },
         work:{
+            "work-aviso":"* This application is under development, which may lead to technical problems!",
             "sounifyme-descricao":"This is a project that I am creating from scratch, a music platform connected with the main streaming music like spotify, the purpose of this platform is to bring people together, it is not just a common music platform it will have means of communication via chat text and voice, options such as creating a band, posting your personal songs at no cost and the best thing about being able to listen to music with several people.",
             "infoeduc-descricao":"This was my first job in a real company as a programmer, my main role within the company was to develop plugins in <b>nodejs</b> and <b>ejs</b> for the platform that was on <b>bubble</b>, in addition to developing these plugins I was responsible for creating the report templates for our PDF generator, and I was also responsible for maintaining the platform within <b>bubble</b>.",
             "work-title":"Below are some of my work or personal projects.",
@@ -70,6 +71,7 @@ var textLangs = {
             'work-resume': 'Contribui para o desenvolvimento de um sistema na plataforma que atendeu redes de ensino no Brasil.'
         },
         work:{
+            "work-aviso":"* Esta aplicação está em desenvolvimento, o que pode acarretar em problemas técnicos!",
             "sounifyme-descricao":"Esse e um projeto que eu estou criando do zero, uma plataforma de música conectada com os principais streaming de música como spotify, o objetivo dessa plataforma e unir pessoas, não e apenas uma plataforma de música comum ela ira contar com meios de comunicação por chat de texto e voz, opções como criação de uma banda, postar as suas músicas pessoais sem nenhuma despesa e o melhor poder escutar música com várias pessoas.",
             "infoeduc-descricao":"Este foi meu primeiro emprego em uma empresa real como programador, minha principal função dentro da empresa era desenvolver plugins em <b>nodejs</b> e <b>ejs</b> para a plataforma que estava em <b> bubble</b>, além de desenvolver esses plugins fui responsável pela criação dos templates de relatórios para nosso gerador de PDF, e também fui responsável pela manutenção da plataforma dentro do <b>bubble</b>.",
             "work-title":"Abaixo são alguns dos meus trabalhos ou projetos pessoais.",
@@ -105,6 +107,7 @@ function langVerification(){
             }
         })
     }
+    
     switch (idioma) {
         case undefined:
         case null:
@@ -118,59 +121,34 @@ function langVerification(){
         case 'en-US':
             document.querySelector('html').setAttribute('lang', 'en-US')
             langSelected.src = '../public/assets/svgs/US.svg'
-            switch (index) {
-                case 0:
-                    textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs["en-US"].index)
-                    break;
-                case 1:
-                    textSelect(['main-title',"text-paragrafo"],textLangs["en-US"].about)
-                    break;
-                case 2:
-                    textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["en-US"].skills)
-                    break;
-                case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title"],textLangs["en-US"].work)
-                    break;
-                case 4:
-                    textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["en-US"].curriculo)
-                    break;
-                case 5:
-                    textSelect(["main-title","text-paragrafo",'enviar'], textLangs["en-US"].contact)
-                    break;
-                case 6:
-                    textSelect(["main-title","resumo","voltar-curriculo","certificado-online","prepara-title",'certificado-presencial'], textLangs["en-US"].certificados)
-                    break;
-            }
             break;
         case 'pt-BR':
             document.querySelector('html').setAttribute('lang', 'pt-BR')
             langSelected.src = '../public/assets/svgs/BR.svg'
-            switch (index) {
-                case 0:
-                    textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs["pt-BR"].index)
-                    break;
-                case 1:
-                    textSelect(['main-title',"text-paragrafo"],textLangs["pt-BR"].about)
-                    break;
-
-                case 2:
-                    textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs["pt-BR"].skills)
-                    break;
-                case 3:
-                    textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title"],textLangs["pt-BR"].work)
-                    break;
-                case 4:
-                    textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs["pt-BR"].curriculo)
-                    break;
-                case 5:
-                    textSelect(["main-title","text-paragrafo",'enviar'], textLangs["pt-BR"].contact)
-                    break;
-                case 6:
-                    textSelect(["main-title","resumo","voltar-curriculo","certificado-online","prepara-title",'certificado-presencial'], textLangs["pt-BR"].certificados)
-                    break;
-            }
             break;
-
+    }
+    switch (index) {
+        case 0:
+            textSelect(['contact-button','main-title',"text-paragrafo","picker-text"],textLangs[idioma].index)
+            break;
+        case 1:
+            textSelect(['main-title',"text-paragrafo"],textLangs[idioma].about)
+            break;
+        case 2:
+            textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs[idioma].skills)
+            break;
+        case 3:
+            textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-aviso"],textLangs[idioma].work)
+            break;
+        case 4:
+            textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs[idioma].curriculo)
+            break;
+        case 5:
+            textSelect(["main-title","text-paragrafo",'enviar'], textLangs[idioma].contact)
+            break;
+        case 6:
+            textSelect(["main-title","resumo","voltar-curriculo","certificado-online","prepara-title",'certificado-presencial'], textLangs[idioma].certificados)
+            break;
     }
 }
 document.getElementById('lang-containner').addEventListener('click',()=>{

@@ -1,3 +1,6 @@
+#containner{
+    height: 100%;
+}
 main{
     display: flex;
     background-color: var(--main-background);

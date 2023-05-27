@@ -2,13 +2,14 @@ main{
     display: flex;
     background-color: var(--main-background);
     transition: 0.4s;
+
 }
 #main-containner{
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 2em;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 #main-title{

@@ -133,6 +133,10 @@ main{
 .text-title-cols{
     margin-bottom: 1em;
 }
+#work-aviso{
+    font: 400 0.8em 'inter',sans-serif;
+    color: rgb(255, 0, 0);
+}
 @media screen and (max-width: 760px) {
     .footer-cols{
         flex-direction: column;
@@ -142,6 +146,9 @@ main{
     }
 } 
 @media screen and (max-width: 1350px) {
+    .aviso-containner{
+        margin-bottom: 1em;
+    }
   .main-col{
     flex-direction: column;
   }  
