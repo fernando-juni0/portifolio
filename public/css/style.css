@@ -175,6 +175,7 @@ main{
     -moz-box-shadow: 0px 0px 62px 4px var(--color-secundary);
     box-shadow: 0px 0px 62px 4px var(--color-secundary);
     transition: 0.5s;
+    animation: sombraAnim 1s;
 }
 #secundary-color-picker{
     padding: 5px;
@@ -236,7 +237,7 @@ main{
     color: #9055FF;
     margin-left: 8px;
     margin-right: 8px;
-    
+    animation: colorAnim 0.8s;
 }
 .color-selected{
     content: url(../assets/svgs/done_white_24dp.svg);
@@ -245,6 +246,24 @@ main{
     font-size: 1.5em;
     color: var(--color-secundary);
 }
+#select-newColor{
+    animation: colorAnim 0.8s;
+}
+
+@keyframes sombraAnim{
+    0%{
+        -webkit-box-shadow: 0px 0px 0px 0px var(--color-secundary);
+        -moz-box-shadow: 0px 0px 0px 0px var(--color-secundary);
+        box-shadow: 0px 0px 0px 0px var(--color-secundary);
+    }
+}
+@keyframes colorAnim{
+    0%{
+        transform: scale(0);
+    }
+}
+
+
 @media screen and (min-width: 1400px) {
     
     #body-content, #h1-content{

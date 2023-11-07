@@ -48,6 +48,7 @@ main{
 }
 #progress-bar div{
     height: 0.4em;
+    animation: animationsBar 1s;
 }
 .graph-col{
     margin-top: 20px;
@@ -174,6 +175,14 @@ main{
     margin-left: 0.5em;
     font-weight: 200;
 }
+
+
+@keyframes animationsBar{
+    0%{
+        width: 0;
+    }
+}
+
 
 @media screen and (min-width: 1400px) {
     #body-content, #h1-content{

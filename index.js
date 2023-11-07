@@ -64,7 +64,7 @@ app.post('/contact/menssage', (req,res)=>{
         trasporter.sendMail({
             
             text: 'Olá sua mensagem já foi recebida logo entrarei em contato.',
-            html:`<b>Olá sua mensagem já foi recebida logo entrarei em contato.</b><br><br><a href="https://portifolio-fernando.onrender.com"><button style="padding: 10px; background-color: ${data.color}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
+            html:`<b>Olá sua mensagem já foi recebida logo entrarei em contato.</b><br><br><a href="https://fernandojunio.com.br"><button style="padding: 10px; background-color: ${data.color}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
             subject: "Nova Mensagem de Fernando Júnio",
             from: "Fernando Júnio <fernando132sj@gmail.com>",
             to: [data.email,'fernando132sj@gmail.com']
@@ -72,7 +72,7 @@ app.post('/contact/menssage', (req,res)=>{
     }else if(data.lang == 'en-US'){
         trasporter.sendMail({
             text: 'Hello, your message has been received, I will contact you soon.',
-            html:`<b>Hello, your message has been received, I will contact you soon.</b><br><br><a href="https://portifolio-fernando.onrender.com"><button style="padding: 10px; background-color: ${data.color}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
+            html:`<b>Hello, your message has been received, I will contact you soon.</b><br><br><a href="https://fernandojunio.com.br"><button style="padding: 10px; background-color: ${data.color}; color: white; font-weight: bold; outline: none; border: 1px solid #c4c4c488; cursor:pointer;">Ir para o Portfólio</button></a>`,
             subject: "New Message from Fernando Júnio",
             from: "Fernando Júnio <fernando132sj@gmail.com>",
             to: [data.email,'fernando132sj@gmail.com']
@@ -86,7 +86,10 @@ app.post('/contact/menssage', (req,res)=>{
         from: "Fernando Júnio <fernando132sj@gmail.com>",
         to: ['junio132sj@gmail.com','fernando132sj@gmail.com']
     })
-    res.redirect('/contact')
+
+    res.status(200).json({
+        success:true
+    })
 })
 
 

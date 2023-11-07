@@ -32,12 +32,25 @@
         justify-content: center;
         align-items: flex-start;
         flex-wrap: wrap;
+        animation: popupAnim 1s;
     }
     .lang-icons{
         margin-top: 5px;
         cursor: pointer;
         width: 5em;
         margin-left: 0.8em; 
+    }
+    
+    @keyframes popupAnim{
+        0%{
+            transform: scale(0);
+            
+        }
+        50%{
+            -webkit-box-shadow:  0px 0px 0px 0px var(--color-secundary);
+            -moz-box-shadow:  0px 0px 0px 0px var(--color-secundary);
+            box-shadow:  0px 0px 0px 0px var(--color-secundary);
+        }
     }
 </style>
 

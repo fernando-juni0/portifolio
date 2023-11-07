@@ -10,6 +10,7 @@
     <div id="containner">
         <%- include('./reusable/langContainner.ejs') %> 
         <%- include('./reusable/header.ejs',{index:5}) %> 
+        <%#- include('./reusable/scrollPage.ejs',{index:5}) %> 
         <main>
             <div id="main-containner">
                 <div id="content">
@@ -19,9 +20,7 @@
                     <p id="paragrafo-content">
                         <span id="text-paragrafo"></span>
                     </p>
-                    <form action="/contact/menssage" id="form-content" method="post">
-                        <input type="text" name="color" id="color" hidden>
-                        <input type="text" name="lang" id="idioma" hidden>
+                    <div id="form-content">
                         <div id="form-conteinner">
                             <div id="form_inputs">
                                 <input id="nome" name="nome" type="text" placeholder="Name" required>
@@ -32,7 +31,7 @@
                             </div>
                             <input type="submit" id="enviar">
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </main>
