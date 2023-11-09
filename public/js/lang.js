@@ -144,7 +144,8 @@ function langVerification(){
             textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs[idioma].curriculo)
             break;
         case 5:
-            textSelect(["main-title","text-paragrafo",'enviar'], textLangs[idioma].contact)
+            textSelect(["main-title","text-paragrafo"], textLangs[idioma].contact)
+            document.getElementById('enviar').value = textLangs[idioma].contact['enviar']
             break;
         case 6:
             textSelect(["main-title","resumo","voltar-curriculo","certificado-online","prepara-title",'certificado-presencial'], textLangs[idioma].certificados)

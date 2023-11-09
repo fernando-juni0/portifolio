@@ -1,7 +1,7 @@
 
-if (indexPage == 0) {
-    document.getElementById('scrollPage-not-content-top').style.display = 'none'
-}
+// if (indexPage == 0) {
+//     document.getElementById('scrollPage-not-content-top').style.display = 'none'
+// }
 let pages = [
     {
         index:0,
@@ -40,14 +40,18 @@ async function reqPageHref(indexPage) {
     return data
 }
 
-window.addEventListener('wheel',async(event)=>{
-    if (event.deltaY > 0) {
-        if (indexPage < 5) {
-            location.href = await reqPageHref(indexPage + 1)
+if (window.innerHeight < document.documentElement.scrollHeight) {
+    console.log('Uma barra de rolagem vertical está ativa.');
+  } else{
+    window.addEventListener('wheel',async(event)=>{
+        if (event.deltaY > 0) {
+            if (indexPage < 5) {
+                location.href = await reqPageHref(indexPage + 1)
+            }
+        } else if (event.deltaY < 0) {
+            if (indexPage > 0) {
+                location.href = await reqPageHref(indexPage - 1)
+            }
         }
-    } else if (event.deltaY < 0) {
-        if (indexPage > 0) {
-            location.href = await reqPageHref(indexPage - 1)
-        }
-    }
-})
+    })
+}
