@@ -126,12 +126,6 @@ app.get('/curriculo/certificados',(req,res)=>{
 
 
 
-app.get('/aplications',(req,res)=>{
-    res.redirect('/work')
-})
-
-
-
 
 //----------------SERVER-------------------
 
