@@ -133,7 +133,7 @@ main{
 .text-title-cols{
     margin-bottom: 1em;
 }
-#work-aviso{
+.work-aviso{
     font: 400 0.8em 'inter',sans-serif;
     color: rgb(255, 0, 0);
 }

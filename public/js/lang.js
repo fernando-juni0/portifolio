@@ -140,7 +140,10 @@ function langVerification(){
             textSelect(['main-title',"text-paragrafo","work-resume","work-title"],textLangs[idioma].skills)
             break;
         case 3:
-            textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","work-aviso","virtualdeck-descricao"],textLangs[idioma].work)
+            textSelect(["devtools-descricao","portifolio-descricao",'sounifyme-descricao',"infoeduc-descricao","work-title","virtualdeck-descricao"],textLangs[idioma].work)
+            document.querySelectorAll('.work-aviso').forEach((element)=>{
+                element.innerHTML = textLangs[idioma].work['work-aviso']
+            })
             break;
         case 4:
             textSelect(["main-title","resumo",'certificado-button',"download-button"], textLangs[idioma].curriculo)
