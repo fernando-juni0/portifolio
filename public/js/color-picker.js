@@ -44,7 +44,7 @@ function colorVerification() {
     if (color == 'select') {
         hex = colorSec
     }
-    
+    console.log(1);
     document.body.style.setProperty('--color-secundary', hex);
     if (document.getElementById('index').value == 0) {
         document.querySelector(`[data-color=${other_colors[0].nome}]`).classList.remove('color-selected')
@@ -61,7 +61,7 @@ if (document.getElementById('index').value == 0) {
     })
     let inputColor = document.getElementById('color-input') 
 
-    inputColor.addEventListener('change',()=>{
+    inputColor.addEventListener('input',()=>{
         localStorage.setItem('color-sec', inputColor.value)
         full_colors[0].hex = inputColor.value
         document.getElementById('color-sec').style.backgroundColor = inputColor.value
@@ -69,8 +69,9 @@ if (document.getElementById('index').value == 0) {
             document.body.style.setProperty('--color-secundary', inputColor.value);
         }else{
             localStorage.setItem('color', "select")
+            colorVerification()
         }
-        location.reload()
+        
     })
     
 
